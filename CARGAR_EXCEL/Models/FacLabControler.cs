@@ -14,6 +14,66 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.getFacturas();
         }
+        public DataTable OTA()
+        {
+            return this.modelFact.OTA();
+        }
+        public DataTable OTM()
+        {
+            return this.modelFact.OTM();
+        }
+        public DataTable OTC()
+        {
+            return this.modelFact.OTC();
+        }
+        public DataTable TotalProc()
+        {
+            return this.modelFact.TotalProc();
+        }
+        public DataTable TotalProcPenafiel()
+        {
+            return this.modelFact.TotalProcPenafiel();
+        }
+        public DataTable TotalProcTA()
+        {
+            return this.modelFact.TotalProcTA();
+        }
+        public DataTable TotalProcTAPenafiel()
+        {
+            return this.modelFact.TotalProcTAPenafiel();
+        }
+        public DataTable TotalProcTM()
+        {
+            return this.modelFact.TotalProcTM();
+        }
+        public DataTable TotalProcTMPenafiel()
+        {
+            return this.modelFact.TotalProcTMPenafiel();
+        }
+        public DataTable TotalProcC()
+        {
+            return this.modelFact.TotalProcC();
+        }
+        public DataTable TotalProcCPenafiel()
+        {
+            return this.modelFact.TotalProcCPenafiel();
+        }
+        public DataTable TotalProcOct()
+        {
+            return this.modelFact.TotalProcOct();
+        }
+        public DataTable TotalProcAgoPenafiel()
+        {
+            return this.modelFact.TotalProcAgoPenafiel();
+        }
+        public DataTable TotalProcSep()
+        {
+            return this.modelFact.TotalProcSep();
+        }
+        public DataTable TotalProcSepPenafiel()
+        {
+            return this.modelFact.TotalProcSepPenafiel();
+        }
         public void GetMerc(string Ai_orden, string Av_cmd_code, string Av_cmd_description, string Af_weight, string Av_weightunit, string Af_count, string Av_countunit)
         {
             this.modelFact.GetMerc(Ai_orden, Av_cmd_code, Av_cmd_description, Af_weight, Av_weightunit, Af_count, Av_countunit);
@@ -21,6 +81,42 @@ namespace CARGAR_EXCEL.Models
         public void DeleteMerc(string Ai_orden)
         {
             this.modelFact.DeleteMerc(Ai_orden);
+        }
+        public void InvoiceHeader(string leg, string rfecha)
+        {
+            this.modelFact.InvoiceHeader(leg, rfecha);
+        }
+        public DataTable SelectLegHeader(string orseg)
+        {
+            return this.modelFact.SelectLegHeader(orseg);
+        }
+        public void PullReportUpdate(string Ai_orden, string rrseg, string rrbillto, string rrestatus, string fechatim)
+        {
+            this.modelFact.PullReportUpdate(Ai_orden, rrseg, rrbillto, rrestatus, fechatim);
+        }
+        public void PullReportUpdate2(string Ai_orden, string rrseg)
+        {
+            this.modelFact.PullReportUpdate2(Ai_orden, rrseg);
+        }
+        public DataTable GetSegmentoRepetidoReporte(string leg)
+        {
+            return this.modelFact.GetSegmentoRepetidoReporte(leg);
+        }
+        public DataTable GetSegmentoJr(string leg)
+        {
+            return this.modelFact.GetSegmentoJr(leg);
+        }
+        public DataTable SelectLegHeaderZp(string orseg)
+        {
+            return this.modelFact.SelectLegHeaderZp(orseg);
+        }
+        public DataTable SelectInvoiceHeader(string orseg)
+        {
+            return this.modelFact.SelectInvoiceHeader(orseg);
+        }
+        public DataTable UpdateOrderHeader(string orheader, string fecha)
+        {
+            return this.modelFact.UpdateOrderHeader(orheader, fecha);
         }
         public DataTable GetLeg()
         {
