@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="CARGAR_EXCEL.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PalacioH.aspx.cs" Inherits="CARGAR_EXCEL.PalacioH" %>
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
@@ -141,7 +141,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="WebForm1.aspx" class="nav-link active">
+                <a href="WebForm1.aspx" class="nav-link">
                     
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liverded</p>
@@ -154,7 +154,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="PalacioH.aspx" class="nav-link">
+                <a href="PalacioH.aspx" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Palacio de Hierro</p>
                 </a>
@@ -187,7 +187,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard - Liverded</h1>
+            <h1 class="m-0">Dashboard - Palacio de Hierro</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

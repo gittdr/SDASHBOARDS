@@ -27,7 +27,7 @@ using System.Threading.Tasks;
 
 namespace CARGAR_EXCEL
 {
-    public partial class Penafiel : System.Web.UI.Page
+    public partial class PalacioH : System.Web.UI.Page
     {
         static storedProcedure sql = new storedProcedure("miConexion");
         public static FacLabControler facLabControler = new FacLabControler();
@@ -65,10 +65,10 @@ namespace CARGAR_EXCEL
             //OTA();
             //OTM();
             //OTC();
-            okTralixPenafiel();
-            OTAPenafiel();
-            OTMPenafiel();
-            OTCPenafiel();
+            okTralixPalacioH();
+            OTAPalacioH();
+            OTMPalacioH();
+            OTCPalacioH();
 
 
 
@@ -121,9 +121,9 @@ namespace CARGAR_EXCEL
                 
             }
         }
-        public async Task okTralixPenafiel()
+        public async Task okTralixPalacioH()
         {
-            DataTable cargaStops = facLabControler.TotalProcPenafiel();
+            DataTable cargaStops = facLabControler.TotalProcPalacioHDetalle();
             int numCells = 4;
             int rownum = 0;
             foreach (DataRow item in cargaStops.Rows)
@@ -205,9 +205,9 @@ namespace CARGAR_EXCEL
 
             }
         }
-        public async Task OTAPenafiel()
+        public async Task OTAPalacioH()
         {
-            DataTable cargaStops = facLabControler.OTAPenafiel();
+            DataTable cargaStops = facLabControler.OTAPalacioH();
             int numCells = 4;
             int rownum = 0;
             foreach (DataRow item in cargaStops.Rows)
@@ -289,9 +289,9 @@ namespace CARGAR_EXCEL
 
             }
         }
-        public async Task OTMPenafiel()
+        public async Task OTMPalacioH()
         {
-            DataTable cargaStops = facLabControler.OTMPenafiel();
+            DataTable cargaStops = facLabControler.OTMPalacioH();
             int numCells = 4;
             int rownum = 0;
             foreach (DataRow item in cargaStops.Rows)
@@ -373,9 +373,9 @@ namespace CARGAR_EXCEL
 
             }
         }
-        public async Task OTCPenafiel()
+        public async Task OTCPalacioH()
         {
-            DataTable cargaStops = facLabControler.OTCPenafiel();
+            DataTable cargaStops = facLabControler.OTCPalacioH();
             int numCells = 4;
             int rownum = 0;
             foreach (DataRow item in cargaStops.Rows)
@@ -417,40 +417,40 @@ namespace CARGAR_EXCEL
         }
         public void RCReporte()
         {
-            DataTable roct = facLabControler.TotalProcAgoPenafiel();
+            DataTable roct = facLabControler.TotalProcAgoPalacioH();
             foreach (DataRow ioct in roct.Rows)
             {
                 int OctubreV = Convert.ToInt32(ioct["total"].ToString());
                 Octubre.Value = Convert.ToString(OctubreV);
             }
-            DataTable rsep = facLabControler.TotalProcSepPenafiel();
+            DataTable rsep = facLabControler.TotalProcSepPalacioH();
             foreach (DataRow isep in rsep.Rows)
             {
                 int SeptiembreV = Convert.ToInt32(isep["total"].ToString());
                 Septiembre.Value = Convert.ToString(SeptiembreV);
             }
-            DataTable rtds = facLabControler.TotalProcPenafiel();
+            DataTable rtds = facLabControler.TotalProcPalacioH();
             
                 foreach (DataRow iseg in rtds.Rows)
                 {
                 string totalP = iseg["total"].ToString();
                 TotalBox.Text = totalP;
                 }
-            DataTable rtdsa = facLabControler.TotalProcTAPenafiel();
+            DataTable rtdsa = facLabControler.TotalProcTAPalacioH();
 
             foreach (DataRow isega in rtdsa.Rows)
             {
                 string totalP = isega["total"].ToString();
                 TotalTABox.Text = totalP;
             }
-            DataTable rtdsaq = facLabControler.TotalProcTMPenafiel();
+            DataTable rtdsaq = facLabControler.TotalProcTMPalacioH();
 
             foreach (DataRow isegaq in rtdsaq.Rows)
             {
                 string totalP = isegaq["total"].ToString();
                 TotalTMBox.Text = totalP;
             }
-            DataTable rtdsaqc = facLabControler.TotalProcCPenafiel();
+            DataTable rtdsaqc = facLabControler.TotalProcCPalacioH();
 
             foreach (DataRow isegaqc in rtdsaqc.Rows)
             {

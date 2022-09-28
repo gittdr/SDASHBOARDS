@@ -193,6 +193,93 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcPalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Procesadas_PalacioH_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcPenafielDetalle()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Procesadas_Penafiel_PRO_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcPalacioHDetalle()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Procesadas_PalacioH_PRO_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcTA()
         {
             DataTable dataTable = new DataTable();
@@ -229,6 +316,35 @@ namespace CARGAR_EXCEL.Models
             {
                 connection.Open();
                 using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_TA_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcTAPalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_TA_PalacioH_JC", connection))
                 {
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
@@ -309,6 +425,35 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcTMPalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_TM_PalacioH_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcC()
         {
             DataTable dataTable = new DataTable();
@@ -345,6 +490,35 @@ namespace CARGAR_EXCEL.Models
             {
                 connection.Open();
                 using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_C_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcCPalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_C_PalacioH_JC", connection))
                 {
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
@@ -425,6 +599,35 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcAgoPalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Ago_PalacioH_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcSep()
         {
             DataTable dataTable = new DataTable();
@@ -461,6 +664,35 @@ namespace CARGAR_EXCEL.Models
             {
                 connection.Open();
                 using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Sep_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcSepPalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Sep_PalacioH_JC", connection))
                 {
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
@@ -699,6 +931,58 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable OTAPenafiel()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9')", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable OTAPalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9')", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable OTM()
         {
             DataTable dataTable = new DataTable();
@@ -725,6 +1009,58 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable OTMPenafiel()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado != 'null' AND estatus in ('3','5')", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable OTMPalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado != 'null' AND estatus in ('3','5')", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable OTC()
         {
             DataTable dataTable = new DataTable();
@@ -732,6 +1068,58 @@ namespace CARGAR_EXCEL.Models
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
                 using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM Reporte_Timbradas WHERE segmento IS NULL OR fechaTimbrado = 'null'", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable OTCPenafiel()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPenafiel WHERE segmento IS NULL OR fechaTimbrado = 'null'", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable OTCPalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPlacioH WHERE segmento IS NULL OR fechaTimbrado = 'null'", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;

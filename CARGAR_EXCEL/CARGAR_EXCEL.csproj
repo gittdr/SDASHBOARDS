@@ -326,6 +326,7 @@
     <Content Include="pages\UI\sliders.html" />
     <Content Include="pages\UI\timeline.html" />
     <Content Include="pages\widgets.html" />
+    <Content Include="PalacioH.aspx" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
     <Content Include="plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
@@ -2212,6 +2213,13 @@
     <Compile Include="Models\PostResponse.cs" />
     <Compile Include="Models\storeProcedure.cs" />
     <Compile Include="Models\UploadFiles.cs" />
+    <Compile Include="PalacioH.aspx.cs">
+      <DependentUpon>PalacioH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PalacioH.aspx.designer.cs">
+      <DependentUpon>PalacioH.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Penafiel.aspx.cs">
       <DependentUpon>Penafiel.aspx</DependentUpon>

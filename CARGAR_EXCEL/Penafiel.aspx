@@ -148,20 +148,20 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link active">
+                <a href="Penafiel.aspx" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Peñafiel</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="PalacioH.aspx" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Palacio de Hierro</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <%--<li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -169,7 +169,7 @@
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
-          </li>
+          </li>--%>
           
         </ul>
       </nav>

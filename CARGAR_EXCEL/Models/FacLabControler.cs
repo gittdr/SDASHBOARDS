@@ -18,13 +18,37 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.OTA();
         }
+        public DataTable OTAPenafiel()
+        {
+            return this.modelFact.OTAPenafiel();
+        }
+        public DataTable OTAPalacioH()
+        {
+            return this.modelFact.OTAPalacioH();
+        }
         public DataTable OTM()
         {
             return this.modelFact.OTM();
         }
+        public DataTable OTMPenafiel()
+        {
+            return this.modelFact.OTMPenafiel();
+        }
+        public DataTable OTMPalacioH()
+        {
+            return this.modelFact.OTMPalacioH();
+        }
         public DataTable OTC()
         {
             return this.modelFact.OTC();
+        }
+        public DataTable OTCPenafiel()
+        {
+            return this.modelFact.OTCPenafiel();
+        }
+        public DataTable OTCPalacioH()
+        {
+            return this.modelFact.OTCPalacioH();
         }
         public DataTable TotalProc()
         {
@@ -34,6 +58,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcPenafiel();
         }
+        public DataTable TotalProcPalacioH()
+        {
+            return this.modelFact.TotalProcPalacioH();
+        }
         public DataTable TotalProcTA()
         {
             return this.modelFact.TotalProcTA();
@@ -41,6 +69,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcTAPenafiel()
         {
             return this.modelFact.TotalProcTAPenafiel();
+        }
+        public DataTable TotalProcTAPalacioH()
+        {
+            return this.modelFact.TotalProcTAPalacioH();
         }
         public DataTable TotalProcTM()
         {
@@ -50,6 +82,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcTMPenafiel();
         }
+        public DataTable TotalProcTMPalacioH()
+        {
+            return this.modelFact.TotalProcTMPalacioH();
+        }
         public DataTable TotalProcC()
         {
             return this.modelFact.TotalProcC();
@@ -57,6 +93,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcCPenafiel()
         {
             return this.modelFact.TotalProcCPenafiel();
+        }
+        public DataTable TotalProcCPalacioH()
+        {
+            return this.modelFact.TotalProcCPalacioH();
         }
         public DataTable TotalProcOct()
         {
@@ -66,6 +106,18 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcAgoPenafiel();
         }
+        public DataTable TotalProcAgoPalacioH()
+        {
+            return this.modelFact.TotalProcAgoPalacioH();
+        }
+        public DataTable TotalProcPenafielDetalle()
+        {
+            return this.modelFact.TotalProcPenafielDetalle();
+        }
+        public DataTable TotalProcPalacioHDetalle()
+        {
+            return this.modelFact.TotalProcPalacioHDetalle();
+        }
         public DataTable TotalProcSep()
         {
             return this.modelFact.TotalProcSep();
@@ -73,6 +125,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcSepPenafiel()
         {
             return this.modelFact.TotalProcSepPenafiel();
+        }
+        public DataTable TotalProcSepPalacioH()
+        {
+            return this.modelFact.TotalProcSepPalacioH();
         }
         public void GetMerc(string Ai_orden, string Av_cmd_code, string Av_cmd_description, string Af_weight, string Av_weightunit, string Af_count, string Av_countunit)
         {
