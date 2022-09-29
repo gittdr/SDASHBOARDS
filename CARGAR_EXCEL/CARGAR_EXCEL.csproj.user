@@ -8,8 +8,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
-    <NameOfLastUsedPublishProfile>C:\CartaPorteCargaMasiva\TimbradoFacturas\CARGAR_EXCEL\Properties\PublishProfiles\FolderProfile1.pubxml</NameOfLastUsedPublishProfile>
+    <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
+    <NameOfLastUsedPublishProfile>C:\CartaPorteCargaMasiva\ReporteTA\CARGAR_EXCEL\Properties\PublishProfiles\FolderProfile2.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

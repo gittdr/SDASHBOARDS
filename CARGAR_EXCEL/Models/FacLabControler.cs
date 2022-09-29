@@ -26,6 +26,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.OTAPalacioH();
         }
+        public DataTable OTADhl()
+        {
+            return this.modelFact.OTADhl();
+        }
         public DataTable OTM()
         {
             return this.modelFact.OTM();
@@ -37,6 +41,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable OTMPalacioH()
         {
             return this.modelFact.OTMPalacioH();
+        }
+        public DataTable OTMDhl()
+        {
+            return this.modelFact.OTMDhl();
         }
         public DataTable OTC()
         {
@@ -50,6 +58,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.OTCPalacioH();
         }
+        public DataTable OTCDhl()
+        {
+            return this.modelFact.OTCDhl();
+        }
         public DataTable TotalProc()
         {
             return this.modelFact.TotalProc();
@@ -61,6 +73,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcPalacioH()
         {
             return this.modelFact.TotalProcPalacioH();
+        }
+        public DataTable TotalProcDhl()
+        {
+            return this.modelFact.TotalProcDhl();
         }
         public DataTable TotalProcTA()
         {
@@ -74,6 +90,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcTAPalacioH();
         }
+        public DataTable TotalProcTADhl()
+        {
+            return this.modelFact.TotalProcTADhl();
+        }
         public DataTable TotalProcTM()
         {
             return this.modelFact.TotalProcTM();
@@ -85,6 +105,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcTMPalacioH()
         {
             return this.modelFact.TotalProcTMPalacioH();
+        }
+        public DataTable TotalProcTMDhl()
+        {
+            return this.modelFact.TotalProcTMDhl();
         }
         public DataTable TotalProcC()
         {
@@ -98,17 +122,41 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcCPalacioH();
         }
+        public DataTable TotalProcCDhl()
+        {
+            return this.modelFact.TotalProcCDhl();
+        }
         public DataTable TotalProcOct()
         {
             return this.modelFact.TotalProcOct();
+        }
+        public DataTable TotalProcOctubre()
+        {
+            return this.modelFact.TotalProcOctubre();
         }
         public DataTable TotalProcAgoPenafiel()
         {
             return this.modelFact.TotalProcAgoPenafiel();
         }
+        public DataTable TotalProcOctubrePenafiel()
+        {
+            return this.modelFact.TotalProcOctubrePenafiel();
+        }
+        public DataTable TotalProcOctubrePalacioH()
+        {
+            return this.modelFact.TotalProcOctubrePalacioH();
+        }
+        public DataTable TotalProcOctubreDhl()
+        {
+            return this.modelFact.TotalProcOctubreDhl();
+        }
         public DataTable TotalProcAgoPalacioH()
         {
             return this.modelFact.TotalProcAgoPalacioH();
+        }
+        public DataTable TotalProcAgoDhl()
+        {
+            return this.modelFact.TotalProcAgoDhl();
         }
         public DataTable TotalProcPenafielDetalle()
         {
@@ -117,6 +165,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcPalacioHDetalle()
         {
             return this.modelFact.TotalProcPalacioHDetalle();
+        }
+        public DataTable TotalProcDhlDetalle()
+        {
+            return this.modelFact.TotalProcDhlDetalle();
         }
         public DataTable TotalProcSep()
         {
@@ -129,6 +181,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcSepPalacioH()
         {
             return this.modelFact.TotalProcSepPalacioH();
+        }
+        public DataTable TotalProcSepDhl()
+        {
+            return this.modelFact.TotalProcSepDhl();
         }
         public void GetMerc(string Ai_orden, string Av_cmd_code, string Av_cmd_description, string Af_weight, string Av_weightunit, string Af_count, string Av_countunit)
         {

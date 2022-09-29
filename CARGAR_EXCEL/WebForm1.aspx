@@ -159,6 +159,12 @@
                   <p>Palacio de Hierro</p>
                 </a>
               </li>
+                <li class="nav-item">
+                <a href="Dhl.aspx" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dhl</p>
+                </a>
+              </li>
             </ul>
           </li>
           <%--<li class="nav-item">
@@ -256,8 +262,9 @@
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3><asp:Label ID="TotalCBox" CssClass="label" runat="server"></asp:Label></h3>
-                   <asp:HiddenField ID="Octubre"  runat="server"></asp:HiddenField>
+                   <asp:HiddenField ID="Agosto"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Septiembre"  runat="server"></asp:HiddenField>
+                  <asp:HiddenField ID="Octubre"  runat="server"></asp:HiddenField>
                 <p>Ordenes</p>
               </div>
               <div class="icon">
@@ -780,10 +787,11 @@
 
             // Get context with jQuery - using jQuery's .get() method.
             var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
-            var v1 = document.getElementById('<%=Octubre.ClientID%>').value;
+            var v1 = document.getElementById('<%=Agosto.ClientID%>').value;
             var v2 = document.getElementById('<%=Septiembre.ClientID%>').value;
+            var v3 = document.getElementById('<%=Octubre.ClientID%>').value;
             var areaChartData = {
-                labels: ['Agosto', 'Septiembre'],
+                labels: ['Agosto', 'Septiembre','Octubre'],
                 datasets: [
                     {
                         label: 'Ordenes procesadas',
@@ -794,7 +802,7 @@
                         pointStrokeColor: 'rgba(60,141,188,1)',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data: [v1, v2]
+                        data: [v1, v2,v3]
                     }//,
                     //{
                     //    label: 'Electronics',

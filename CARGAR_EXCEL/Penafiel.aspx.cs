@@ -420,14 +420,20 @@ namespace CARGAR_EXCEL
             DataTable roct = facLabControler.TotalProcAgoPenafiel();
             foreach (DataRow ioct in roct.Rows)
             {
-                int OctubreV = Convert.ToInt32(ioct["total"].ToString());
-                Octubre.Value = Convert.ToString(OctubreV);
+                int AgostoV = Convert.ToInt32(ioct["total"].ToString());
+                Agosto.Value = Convert.ToString(AgostoV);
             }
             DataTable rsep = facLabControler.TotalProcSepPenafiel();
             foreach (DataRow isep in rsep.Rows)
             {
                 int SeptiembreV = Convert.ToInt32(isep["total"].ToString());
                 Septiembre.Value = Convert.ToString(SeptiembreV);
+            }
+            DataTable roctubre = facLabControler.TotalProcOctubrePenafiel();
+            foreach (DataRow ioctubre in roctubre.Rows)
+            {
+                int OctubreV = Convert.ToInt32(ioctubre["total"].ToString());
+                Octubre.Value = Convert.ToString(OctubreV);
             }
             DataTable rtds = facLabControler.TotalProcPenafiel();
             

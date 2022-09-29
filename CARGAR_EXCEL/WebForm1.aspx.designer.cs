@@ -69,13 +69,13 @@ namespace CARGAR_EXCEL
         protected global::System.Web.UI.WebControls.Label TotalCBox;
 
         /// <summary>
-        /// Control Octubre.
+        /// Control Agosto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField Octubre;
+        protected global::System.Web.UI.WebControls.HiddenField Agosto;
 
         /// <summary>
         /// Control Septiembre.
@@ -85,6 +85,15 @@ namespace CARGAR_EXCEL
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField Septiembre;
+
+        /// <summary>
+        /// Control Octubre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Octubre;
 
         /// <summary>
         /// Control UpdatePanel1.

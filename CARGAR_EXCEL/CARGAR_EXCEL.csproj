@@ -121,6 +121,7 @@
     <Content Include="build\npm\Plugins.js" />
     <Content Include="build\npm\Publish.js" />
     <Content Include="build\npm\vnu-jar.js" />
+    <Content Include="Default.aspx" />
     <Content Include="dist\css\adminlte.css" />
     <Content Include="dist\css\adminlte.min.css" />
     <Content Include="dist\css\alt\adminlte.components.css" />
@@ -326,6 +327,7 @@
     <Content Include="pages\UI\sliders.html" />
     <Content Include="pages\UI\timeline.html" />
     <Content Include="pages\widgets.html" />
+    <Content Include="Dhl.aspx" />
     <Content Include="PalacioH.aspx" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
@@ -2200,6 +2202,13 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2213,6 +2222,13 @@
     <Compile Include="Models\PostResponse.cs" />
     <Compile Include="Models\storeProcedure.cs" />
     <Compile Include="Models\UploadFiles.cs" />
+    <Compile Include="Dhl.aspx.cs">
+      <DependentUpon>Dhl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dhl.aspx.designer.cs">
+      <DependentUpon>Dhl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PalacioH.aspx.cs">
       <DependentUpon>PalacioH.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
