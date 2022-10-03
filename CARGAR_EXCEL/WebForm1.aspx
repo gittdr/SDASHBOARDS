@@ -265,6 +265,8 @@
                    <asp:HiddenField ID="Agosto"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Septiembre"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Octubre"  runat="server"></asp:HiddenField>
+                  <%--<asp:HiddenField ID="Noviembre"  runat="server"></asp:HiddenField>
+                  <asp:HiddenField ID="Diciembre"  runat="server"></asp:HiddenField>--%>
                 <p>Ordenes</p>
               </div>
               <div class="icon">
@@ -323,7 +325,13 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-info">
                             <div class="modal-header">
-                              <h4 class="modal-title"><b>Ordenes procesadas</b></h4>
+                                <table style="border-collapse:collapse;width:100% !important">
+                                    <tr>
+                                        <td><h4 class="modal-title"><b>Ordenes procesadas</b></h4></td>
+                                        <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcel" runat="server" /></td>
+                                    </tr>
+                                </table>
+                              
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -407,7 +415,7 @@
                                   </tbody>
                                 </table>--%>
                               <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-             
+                             
                               <!-- /.card-body -->
                             </div>
                         </div>
@@ -423,7 +431,13 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-success">
                             <div class="modal-header">
-                              <h4 class="modal-title"><b>Ordenes timbradas automaticamente</b></h4>
+                                <table style="border-collapse:collapse;width:100% !important">
+                                    <tr>
+                                        <td><h4 class="modal-title"><b>Ordenes timbradas automaticamente</b></h4></td>
+                                        <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcelTA" runat="server" /></td>
+                                    </tr>
+                                </table>
+                              
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -507,7 +521,7 @@
                                   </tbody>
                                 </table>--%>
                               <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-             
+                              
                               <!-- /.card-body -->
                             </div>
                         </div>
@@ -523,7 +537,13 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-warning">
                             <div class="modal-header">
-                              <h4 class="modal-title"><b>Ordenes timbradas manualmente</b></h4>
+                                <table style="border-collapse:collapse;width:100% !important">
+                                    <tr>
+                                        <td><h4 class="modal-title"><b>Ordenes timbradas manualmente</b></h4></td>
+                                        <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcelTM" runat="server" /></td>
+                                    </tr>
+                                </table>
+                              
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -623,7 +643,13 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-danger">
                             <div class="modal-header">
-                              <h4 class="modal-title"><b>Ordenes canceladas</b></h4>
+                                <table style="border-collapse:collapse;width:100% !important">
+                                    <tr>
+                                        <td><h4 class="modal-title"><b>Ordenes canceladas</b></h4></td>
+                                        <td><asp:Button Text="Download" CssClass="btn btn-dark" OnClick="ExportExcelTC" runat="server" /></td>
+                                    </tr>
+                                </table>
+                              
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -790,6 +816,8 @@
             var v1 = document.getElementById('<%=Agosto.ClientID%>').value;
             var v2 = document.getElementById('<%=Septiembre.ClientID%>').value;
             var v3 = document.getElementById('<%=Octubre.ClientID%>').value;
+            <%--var v4 = document.getElementById('<%=Noviembre.ClientID%>').value;
+            var v5 = document.getElementById('<%=Diciembre.ClientID%>').value;--%>
             var areaChartData = {
                 labels: ['Agosto', 'Septiembre','Octubre'],
                 datasets: [

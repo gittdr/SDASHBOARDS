@@ -66,6 +66,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProc();
         }
+        public DataTable ProcPenafiel()
+        {
+            return this.modelFact.ProcPenafiel();
+        }
         public DataTable TotalProcPenafiel()
         {
             return this.modelFact.TotalProcPenafiel();
