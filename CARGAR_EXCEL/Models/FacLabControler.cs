@@ -138,6 +138,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcOctubre();
         }
+        public DataTable TotalProcNoviembre()
+        {
+            return this.modelFact.TotalProcNoviembre();
+        }
         public DataTable TotalProcAgoPenafiel()
         {
             return this.modelFact.TotalProcAgoPenafiel();
@@ -146,13 +150,25 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcOctubrePenafiel();
         }
+        public DataTable TotalProcNoviembrePenafiel()
+        {
+            return this.modelFact.TotalProcNoviembrePenafiel();
+        }
         public DataTable TotalProcOctubrePalacioH()
         {
             return this.modelFact.TotalProcOctubrePalacioH();
         }
+        public DataTable TotalProcNoviembrePalacioH()
+        {
+            return this.modelFact.TotalProcNoviembrePalacioH();
+        }
         public DataTable TotalProcOctubreDhl()
         {
             return this.modelFact.TotalProcOctubreDhl();
+        }
+        public DataTable TotalProcNoviembreDhl()
+        {
+            return this.modelFact.TotalProcNoviembreDhl();
         }
         public DataTable TotalProcAgoPalacioH()
         {

@@ -66,9 +66,16 @@ namespace CARGAR_EXCEL
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
-                //cargaFacturas();
+
+            ////cargaFacturas();
+            //HtmlMeta meta = new HtmlMeta();
+
+            //meta.HttpEquiv = "Refresh";
+
+            //meta.Content = "5";
+
+            //this.Page.Header.Controls.Add(meta);
             okTralix();
             OTA();
             OTM();
@@ -411,6 +418,12 @@ namespace CARGAR_EXCEL
             {
                 int OctubreV = Convert.ToInt32(ioctubre["total"].ToString());
                 Octubre.Value = Convert.ToString(OctubreV);
+            }
+            DataTable rnoviembre = facLabControler.TotalProcNoviembre();
+            foreach (DataRow inoviembre in rnoviembre.Rows)
+            {
+                int NoviembreV = Convert.ToInt32(inoviembre["total"].ToString());
+                Noviembre.Value = Convert.ToString(NoviembreV);
             }
 
             //int NoviembreV = 0;

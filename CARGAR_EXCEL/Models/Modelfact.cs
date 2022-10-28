@@ -773,6 +773,35 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcNoviembre()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Noviembre_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcAgoPenafiel()
         {
             DataTable dataTable = new DataTable();
@@ -831,6 +860,35 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcNoviembrePenafiel()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Noviembre_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcOctubrePalacioH()
         {
             DataTable dataTable = new DataTable();
@@ -860,6 +918,35 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcNoviembrePalacioH()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Noviembre_PalacioH_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcOctubreDhl()
         {
             DataTable dataTable = new DataTable();
@@ -867,6 +954,35 @@ namespace CARGAR_EXCEL.Models
             {
                 connection.Open();
                 using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Octubre_Dhl_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcNoviembreDhl()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Noviembre_Dhl_JC", connection))
                 {
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
@@ -1233,7 +1349,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("select Orden,segmento,billto,fechaTimbrado from Reporte_Timbradas", connection))
+                using (SqlCommand selectCommand = new SqlCommand("select Orden,segmento,billto,fechaTimbrado from Reporte_Timbradas ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1259,7 +1375,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM Reporte_Timbradas WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9')", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM Reporte_Timbradas WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9') ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1285,7 +1401,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9')", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9')ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1311,7 +1427,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9')", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9') ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1337,7 +1453,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtDhl WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9')", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtDhl WHERE fechaTimbrado != 'null' AND estatus in ('1','2','9') ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1363,7 +1479,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM Reporte_Timbradas WHERE fechaTimbrado != 'null' AND estatus in ('3','5')", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM Reporte_Timbradas WHERE fechaTimbrado != 'null' AND estatus in ('3','5') ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1389,7 +1505,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado != 'null' AND estatus in ('3','5')", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado != 'null' AND estatus in ('3','5')ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1415,7 +1531,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado != 'null' AND estatus in ('3','5')", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado != 'null' AND estatus in ('3','5')ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1441,7 +1557,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtDhl WHERE fechaTimbrado != 'null' AND estatus in ('3','5')", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtDhl WHERE fechaTimbrado != 'null' AND estatus in ('3','5') ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1467,7 +1583,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM Reporte_Timbradas WHERE segmento IS NULL OR fechaTimbrado = 'null'", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM Reporte_Timbradas WHERE segmento IS NULL OR fechaTimbrado = 'null' ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1493,7 +1609,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPenafiel WHERE segmento IS NULL OR fechaTimbrado = 'null'", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPenafiel WHERE segmento IS NULL OR fechaTimbrado = 'null' ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1519,7 +1635,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPlacioH WHERE segmento IS NULL OR fechaTimbrado = 'null'", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtPlacioH WHERE segmento IS NULL OR fechaTimbrado = 'null' ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;
@@ -1545,7 +1661,7 @@ namespace CARGAR_EXCEL.Models
             string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
             using (SqlConnection connection = new SqlConnection(cadena2))
             {
-                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtDhl WHERE segmento IS NULL OR fechaTimbrado = 'null'", connection))
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden,segmento,billto, fechaTimbrado FROM RtDhl WHERE segmento IS NULL OR fechaTimbrado = 'null' ORDER BY fechaTimbrado DESC", connection))
                 {
                     selectCommand.CommandType = CommandType.Text;
                     selectCommand.CommandTimeout = 100000;

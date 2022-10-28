@@ -581,10 +581,12 @@ namespace CARGAR_EXCEL
                 int OctubreV = Convert.ToInt32(ioctubre["total"].ToString());
                 Octubre.Value = Convert.ToString(OctubreV);
             }
-            //int NoviembreV = 0;
-            //Noviembre.Value = NoviembreV.ToString();
-            //int DiciembreV = 0;
-            //Diciembre.Value = DiciembreV.ToString();
+            DataTable rnoviembre = facLabControler.TotalProcNoviembreDhl();
+            foreach (DataRow inoviembre in rnoviembre.Rows)
+            {
+                int NoviembreV = Convert.ToInt32(inoviembre["total"].ToString());
+                Noviembre.Value = Convert.ToString(NoviembreV);
+            }
 
             //TOTAL DE ORDENES PROCESADAS
             DataTable rtds = facLabControler.TotalProcDhl();

@@ -224,48 +224,7 @@ namespace CARGAR_EXCEL
                 }
             }
         }
-        public async Task okTralix()
-        {
-            DataTable cargaStops = facLabControler.facturas();
-            int numCells = 4;
-            int rownum = 0;
-            foreach (DataRow item in cargaStops.Rows)
-            {
-                
-                    
-                        TableRow r = new TableRow();
-                        for (int i = 0; i < numCells; i++)
-                        {
-                            if (i == 0)
-                            {
-                                HyperLink hp1 = new HyperLink();
-                                hp1.ID = "hpIndex" + rownum.ToString();
-                                hp1.Text = item[i].ToString();
-                                //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
-                                TableCell c = new TableCell();
-                                c.Controls.Add(hp1);
-                                r.Cells.Add(c);
-
-                            }
-                            else
-                            {
-                                TableCell c = new TableCell();
-                                c.Controls.Add(new LiteralControl("row "
-                                    + rownum.ToString() + ", cell " + i.ToString()));
-                                c.Text = item[i].ToString();
-                                r.Cells.Add(c);
-                            }
-                        }
-
-
-                        tablaStops.Rows.Add(r);
-                        rownum++;
-                    
-                    //FIN
-
-                
-            }
-        }
+    
         public async Task okTralixPalacioH()
         {
             DataTable cargaStops = facLabControler.TotalProcPalacioHDetalle();
@@ -308,48 +267,7 @@ namespace CARGAR_EXCEL
 
             }
         }
-        public async Task OTA()
-        {
-            DataTable cargaStops = facLabControler.OTA();
-            int numCells = 4;
-            int rownum = 0;
-            foreach (DataRow item in cargaStops.Rows)
-            {
-
-
-                TableRow r = new TableRow();
-                for (int i = 0; i < numCells; i++)
-                {
-                    if (i == 0)
-                    {
-                        HyperLink hp1 = new HyperLink();
-                        hp1.ID = "hpIndex" + rownum.ToString();
-                        hp1.Text = item[i].ToString();
-                        //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
-                        TableCell c = new TableCell();
-                        c.Controls.Add(hp1);
-                        r.Cells.Add(c);
-
-                    }
-                    else
-                    {
-                        TableCell c = new TableCell();
-                        c.Controls.Add(new LiteralControl("row "
-                            + rownum.ToString() + ", cell " + i.ToString()));
-                        c.Text = item[i].ToString();
-                        r.Cells.Add(c);
-                    }
-                }
-
-
-                Table1.Rows.Add(r);
-                rownum++;
-
-                //FIN
-
-
-            }
-        }
+        
         public async Task OTAPalacioH()
         {
             DataTable cargaStops = facLabControler.OTAPalacioH();
@@ -392,48 +310,7 @@ namespace CARGAR_EXCEL
 
             }
         }
-        public async Task OTM()
-        {
-            DataTable cargaStops = facLabControler.OTM();
-            int numCells = 4;
-            int rownum = 0;
-            foreach (DataRow item in cargaStops.Rows)
-            {
-
-
-                TableRow r = new TableRow();
-                for (int i = 0; i < numCells; i++)
-                {
-                    if (i == 0)
-                    {
-                        HyperLink hp1 = new HyperLink();
-                        hp1.ID = "hpIndex" + rownum.ToString();
-                        hp1.Text = item[i].ToString();
-                        //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
-                        TableCell c = new TableCell();
-                        c.Controls.Add(hp1);
-                        r.Cells.Add(c);
-
-                    }
-                    else
-                    {
-                        TableCell c = new TableCell();
-                        c.Controls.Add(new LiteralControl("row "
-                            + rownum.ToString() + ", cell " + i.ToString()));
-                        c.Text = item[i].ToString();
-                        r.Cells.Add(c);
-                    }
-                }
-
-
-                Table2.Rows.Add(r);
-                rownum++;
-
-                //FIN
-
-
-            }
-        }
+  
         public async Task OTMPalacioH()
         {
             DataTable cargaStops = facLabControler.OTMPalacioH();
@@ -476,48 +353,7 @@ namespace CARGAR_EXCEL
 
             }
         }
-        public async Task OTC()
-        {
-            DataTable cargaStops = facLabControler.OTC();
-            int numCells = 4;
-            int rownum = 0;
-            foreach (DataRow item in cargaStops.Rows)
-            {
-
-
-                TableRow r = new TableRow();
-                for (int i = 0; i < numCells; i++)
-                {
-                    if (i == 0)
-                    {
-                        HyperLink hp1 = new HyperLink();
-                        hp1.ID = "hpIndex" + rownum.ToString();
-                        hp1.Text = item[i].ToString();
-                        //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
-                        TableCell c = new TableCell();
-                        c.Controls.Add(hp1);
-                        r.Cells.Add(c);
-
-                    }
-                    else
-                    {
-                        TableCell c = new TableCell();
-                        c.Controls.Add(new LiteralControl("row "
-                            + rownum.ToString() + ", cell " + i.ToString()));
-                        c.Text = item[i].ToString();
-                        r.Cells.Add(c);
-                    }
-                }
-
-
-                Table3.Rows.Add(r);
-                rownum++;
-
-                //FIN
-
-
-            }
-        }
+        
         public async Task OTCPalacioH()
         {
             DataTable cargaStops = facLabControler.OTCPalacioH();
@@ -580,10 +416,12 @@ namespace CARGAR_EXCEL
                 int OctubreV = Convert.ToInt32(ioctubre["total"].ToString());
                 Octubre.Value = Convert.ToString(OctubreV);
             }
-            //int NoviembreV = 0;
-            //Noviembre.Value = NoviembreV.ToString();
-            //int DiciembreV = 0;
-            //Diciembre.Value = DiciembreV.ToString();
+            DataTable rnoviembre = facLabControler.TotalProcNoviembrePalacioH();
+            foreach (DataRow inoviembre in rnoviembre.Rows)
+            {
+                int NoviembreV = Convert.ToInt32(inoviembre["total"].ToString());
+                Noviembre.Value = Convert.ToString(NoviembreV);
+            }
 
             DataTable rtds = facLabControler.TotalProcPalacioH();
             
