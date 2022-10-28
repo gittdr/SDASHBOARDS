@@ -265,8 +265,8 @@
                    <asp:HiddenField ID="Agosto"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Septiembre"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Octubre"  runat="server"></asp:HiddenField>
-                   <%--<asp:HiddenField ID="Noviembre"  runat="server"></asp:HiddenField>
-                  <asp:HiddenField ID="Diciembre"  runat="server"></asp:HiddenField>--%>
+                   <asp:HiddenField ID="Noviembre"  runat="server"></asp:HiddenField>
+                 <%-- <asp:HiddenField ID="Diciembre"  runat="server"></asp:HiddenField>--%>
                 <p>Ordenes</p>
               </div>
               <div class="icon">
@@ -815,10 +815,10 @@
             var v1 = document.getElementById('<%=Agosto.ClientID%>').value;
             var v2 = document.getElementById('<%=Septiembre.ClientID%>').value;
             var v3 = document.getElementById('<%=Octubre.ClientID%>').value;
-            <%--var v4 = document.getElementById('<%=Noviembre.ClientID%>').value;
-            var v5 = document.getElementById('<%=Diciembre.ClientID%>').value;--%>
+            var v4 = document.getElementById('<%=Noviembre.ClientID%>').value;
+           <%-- var v5 = document.getElementById('<%=Diciembre.ClientID%>').value;--%>
             var areaChartData = {
-                labels: ['Agosto', 'Septiembre', 'Octubre'],
+                labels: ['Agosto', 'Septiembre', 'Octubre','Noviembre'],
                 datasets: [
                     {
                         label: 'Ordenes procesadas',
@@ -829,7 +829,7 @@
                         pointStrokeColor: 'rgba(60,141,188,1)',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data: [v1, v2, v3]
+                        data: [v1, v2, v3, v4]
                     }//,
                     //{
                     //    label: 'Electronics',

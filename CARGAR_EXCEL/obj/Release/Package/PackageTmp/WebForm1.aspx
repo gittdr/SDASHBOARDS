@@ -7,28 +7,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <%--  <meta http-equiv="Refresh" content="5" />--%>
     <title>TDR | TI APPS</title>
-     <link rel="icon" href="Models/icon.png">
+     <link rel="icon" href="Models/icon.png"/>
     <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"/>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css"/>
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"/>
   <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"/>
   <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css"/>
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css"/>
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"/>
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css"/>
   <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css"/>
    
    <%-- <script>
         $(document).ready(function () {
@@ -105,7 +106,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="Models/logo.png" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8">
+      <img src="Models/logo.png" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8"/>
       <span class="brand-text font-weight-light">Admin</span>
     </a>
 
@@ -265,8 +266,8 @@
                    <asp:HiddenField ID="Agosto"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Septiembre"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Octubre"  runat="server"></asp:HiddenField>
-                  <%--<asp:HiddenField ID="Noviembre"  runat="server"></asp:HiddenField>
-                  <asp:HiddenField ID="Diciembre"  runat="server"></asp:HiddenField>--%>
+                  <asp:HiddenField ID="Noviembre"  runat="server"></asp:HiddenField>
+                  <%--<asp:HiddenField ID="Diciembre"  runat="server"></asp:HiddenField>--%>
                 <p>Ordenes</p>
               </div>
               <div class="icon">
@@ -302,23 +303,17 @@
                 </div>
               </div>
               <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-
-            <!-- DONUT CHART -->
-            
-            <!-- /.card -->
-
-            <!-- PIE CHART -->
-            
-            <!-- /.card -->
+               
 
           </div>
+            
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID <img src="dist/img/prod-5.jpg" />to make the widgets sortable)-->
          
           <!-- right col -->
         </div>
+            </div>
+            
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
             <div class="modal fade" id="modal-default">
@@ -754,7 +749,7 @@
     <strong>Copyright &copy; 2021 <a href="http://tdr.com.mx/">TDR Soluciones Logísticas</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
+      <b>Version</b> 1.1.0
     </div>
   </footer>
 
@@ -799,7 +794,7 @@
 <!-- AdminLTE for demo purposes -->
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+<%--<script src="dist/js/pages/dashboard.js"></script>--%>
     <script>
         $(function () {
             /* ChartJS
@@ -816,10 +811,10 @@
             var v1 = document.getElementById('<%=Agosto.ClientID%>').value;
             var v2 = document.getElementById('<%=Septiembre.ClientID%>').value;
             var v3 = document.getElementById('<%=Octubre.ClientID%>').value;
-            <%--var v4 = document.getElementById('<%=Noviembre.ClientID%>').value;
-            var v5 = document.getElementById('<%=Diciembre.ClientID%>').value;--%>
+            var v4 = document.getElementById('<%=Noviembre.ClientID%>').value;
+            <%--var v5 = document.getElementById('<%=Diciembre.ClientID%>').value;--%>
             var areaChartData = {
-                labels: ['Agosto', 'Septiembre','Octubre'],
+                labels: ['Agosto', 'Septiembre','Octubre','Noviembre'],
                 datasets: [
                     {
                         label: 'Ordenes procesadas',
@@ -830,7 +825,7 @@
                         pointStrokeColor: 'rgba(60,141,188,1)',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data: [v1, v2,v3]
+                        data: [v1, v2,v3,v4]
                     }//,
                     //{
                     //    label: 'Electronics',
@@ -841,7 +836,7 @@
                     //    pointStrokeColor: '#c1c7d1',
                     //    pointHighlightFill: '#fff',
                     //    pointHighlightStroke: 'rgba(220,220,220,1)',
-                    //    data: [65, 59, 80, 81, 56, 55, 40]
+                    //    data: [65, 339, 320]
                     //},
                 ]
             }
@@ -895,18 +890,11 @@
             // Get context with jQuery - using jQuery's .get() method.
             var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
             var donutData = {
-                labels: [
-                    'Chrome',
-                    'IE',
-                    'FireFox',
-                    'Safari',
-                    'Opera',
-                    'Navigator',
-                ],
+                labels: ['Agosto', 'Septiembre', 'Octubre'],
                 datasets: [
                     {
-                        data: [700, 500, 400, 600, 300, 100],
-                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+                        data: [v1, v2, v3],
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12'],
                     }
                 ]
             }
