@@ -105,6 +105,42 @@ namespace CARGAR_EXCEL
         protected global::System.Web.UI.WebControls.HiddenField Noviembre;
 
         /// <summary>
+        /// Control Agostot.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Agostot;
+
+        /// <summary>
+        /// Control Septiembret.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Septiembret;
+
+        /// <summary>
+        /// Control Octubret.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Octubret;
+
+        /// <summary>
+        /// Control Noviembret.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Noviembret;
+
+        /// <summary>
         /// Control UpdatePanel1.
         /// </summary>
         /// <remarks>

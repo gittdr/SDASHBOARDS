@@ -67,7 +67,7 @@ namespace CARGAR_EXCEL
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
+            
             ////cargaFacturas();
             //HtmlMeta meta = new HtmlMeta();
 
@@ -401,30 +401,76 @@ namespace CARGAR_EXCEL
         }
         public void RCReporte()
         {
+            DateTime Nfecha = DateTime.Now;
+            //string nfecha = Nfecha.ToString("yyyy");
+            string nfecha = Nfecha.ToString("2022");
             DataTable roct = facLabControler.TotalProcOct();
             foreach (DataRow ioct in roct.Rows)
             {
                 int AgostoV = Convert.ToInt32(ioct["total"].ToString());
                 Agosto.Value = Convert.ToString(AgostoV);
+                
+            }
+            
+            DataTable roct22 = facLabControler.TotalProcOct2022(nfecha);
+            foreach (DataRow ioct22 in roct22.Rows)
+            {
+                
+                int AgostoVt = Convert.ToInt32(ioct22["total"].ToString());
+                Agostot.Text = Convert.ToString(AgostoVt);
             }
             DataTable rsep = facLabControler.TotalProcSep();
             foreach (DataRow isep in rsep.Rows)
             {
                 int SeptiembreV = Convert.ToInt32(isep["total"].ToString());
                 Septiembre.Value = Convert.ToString(SeptiembreV);
+               
+            }
+            DataTable rsep22 = facLabControler.TotalProcSep2022(nfecha);
+            foreach (DataRow isep22 in rsep22.Rows)
+            {
+                
+                int SeptiembreVt = Convert.ToInt32(isep22["total"].ToString());
+                Septiembret.Text = Convert.ToString(SeptiembreVt);
             }
             DataTable roctubre = facLabControler.TotalProcOctubre();
             foreach (DataRow ioctubre in roctubre.Rows)
             {
                 int OctubreV = Convert.ToInt32(ioctubre["total"].ToString());
                 Octubre.Value = Convert.ToString(OctubreV);
+               
+            }
+            DataTable roctubre22 = facLabControler.TotalProcOctubre2022(nfecha);
+            foreach (DataRow ioctubre22 in roctubre22.Rows)
+            {
+ 
+                int OctubreVt = Convert.ToInt32(ioctubre22["total"].ToString());
+                Octubret.Text = Convert.ToString(OctubreVt);
             }
             DataTable rnoviembre = facLabControler.TotalProcNoviembre();
-            foreach (DataRow inoviembre in rnoviembre.Rows)
+            
+                foreach (DataRow inoviembre in rnoviembre.Rows)
+                {
+                    int NoviembreV = Convert.ToInt32(inoviembre["total"].ToString());
+                    Noviembre.Value = Convert.ToString(NoviembreV);
+                   
+                }
+            
+            DataTable rnoviembre22 = facLabControler.TotalProcNoviembre2022(nfecha);
+            if (rnoviembre22.Rows.Count == 0)
             {
-                int NoviembreV = Convert.ToInt32(inoviembre["total"].ToString());
-                Noviembre.Value = Convert.ToString(NoviembreV);
+                Noviembret.Text = "0";
             }
+            else
+            {
+                foreach (DataRow inoviembre22 in rnoviembre22.Rows)
+                {
+                    
+                    int NoviembreVt = Convert.ToInt32(inoviembre22["total"].ToString());
+                    Noviembret.Text = Convert.ToString(NoviembreVt);
+                }
+            }
+
 
             //int NoviembreV = 0;
             //Noviembre.Value = NoviembreV.ToString();

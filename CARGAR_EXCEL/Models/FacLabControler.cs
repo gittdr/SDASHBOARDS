@@ -134,49 +134,97 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcOct();
         }
+        public DataTable TotalProcOct2022(string nfecha)
+        {
+            return this.modelFact.TotalProcOct2022(nfecha);
+        }
         public DataTable TotalProcOctubre()
         {
             return this.modelFact.TotalProcOctubre();
+        }
+        public DataTable TotalProcOctubre2022(string nfecha)
+        {
+            return this.modelFact.TotalProcOctubre2022(nfecha);
         }
         public DataTable TotalProcNoviembre()
         {
             return this.modelFact.TotalProcNoviembre();
         }
+        public DataTable TotalProcNoviembre2022(string nfecha)
+        {
+            return this.modelFact.TotalProcNoviembre2022(nfecha);
+        }
         public DataTable TotalProcAgoPenafiel()
         {
             return this.modelFact.TotalProcAgoPenafiel();
+        }
+        public DataTable TotalProcAgoPenafielyear(string nfecha)
+        {
+            return this.modelFact.TotalProcAgoPenafielyear(nfecha);
         }
         public DataTable TotalProcOctubrePenafiel()
         {
             return this.modelFact.TotalProcOctubrePenafiel();
         }
+        public DataTable TotalProcOctubrePenafielyear(string nfecha)
+        {
+            return this.modelFact.TotalProcOctubrePenafielyear(nfecha);
+        }
         public DataTable TotalProcNoviembrePenafiel()
         {
             return this.modelFact.TotalProcNoviembrePenafiel();
+        }
+        public DataTable TotalProcNoviembrePenafielyear(string nfecha)
+        {
+            return this.modelFact.TotalProcNoviembrePenafielyear(nfecha);
         }
         public DataTable TotalProcOctubrePalacioH()
         {
             return this.modelFact.TotalProcOctubrePalacioH();
         }
+        public DataTable TotalProcOctubrePalacioHyear(string nfecha)
+        {
+            return this.modelFact.TotalProcOctubrePalacioHyear(nfecha);
+        }
         public DataTable TotalProcNoviembrePalacioH()
         {
             return this.modelFact.TotalProcNoviembrePalacioH();
+        }
+        public DataTable TotalProcNoviembrePalacioHyear(string nfecha)
+        {
+            return this.modelFact.TotalProcNoviembrePalacioHyear(nfecha);
         }
         public DataTable TotalProcOctubreDhl()
         {
             return this.modelFact.TotalProcOctubreDhl();
         }
+        public DataTable TotalProcOctubreDhlyear(string nfecha)
+        {
+            return this.modelFact.TotalProcOctubreDhlyear(nfecha);
+        }
         public DataTable TotalProcNoviembreDhl()
         {
             return this.modelFact.TotalProcNoviembreDhl();
+        }
+        public DataTable TotalProcNoviembreDhlyear(string nfecha)
+        {
+            return this.modelFact.TotalProcNoviembreDhlyear(nfecha);
         }
         public DataTable TotalProcAgoPalacioH()
         {
             return this.modelFact.TotalProcAgoPalacioH();
         }
+        public DataTable TotalProcAgoPalacioHyear(string nfecha)
+        {
+            return this.modelFact.TotalProcAgoPalacioHyear(nfecha);
+        }
         public DataTable TotalProcAgoDhl()
         {
             return this.modelFact.TotalProcAgoDhl();
+        }
+        public DataTable TotalProcAgoDhlyear(string nfecha)
+        {
+            return this.modelFact.TotalProcAgoDhlyear(nfecha);
         }
         public DataTable TotalProcPenafielDetalle()
         {
@@ -194,17 +242,33 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcSep();
         }
+        public DataTable TotalProcSep2022(string nfecha)
+        {
+            return this.modelFact.TotalProcSep2022(nfecha);
+        }
         public DataTable TotalProcSepPenafiel()
         {
             return this.modelFact.TotalProcSepPenafiel();
+        }
+        public DataTable TotalProcSepPenafielyear(string nfecha)
+        {
+            return this.modelFact.TotalProcSepPenafielyear(nfecha);
         }
         public DataTable TotalProcSepPalacioH()
         {
             return this.modelFact.TotalProcSepPalacioH();
         }
+        public DataTable TotalProcSepPalacioHyear(string nfecha)
+        {
+            return this.modelFact.TotalProcSepPalacioHyear(nfecha);
+        }
         public DataTable TotalProcSepDhl()
         {
             return this.modelFact.TotalProcSepDhl();
+        }
+        public DataTable TotalProcSepDhlyear(string nfecha)
+        {
+            return this.modelFact.TotalProcSepDhlyear(nfecha);
         }
         public void GetMerc(string Ai_orden, string Av_cmd_code, string Av_cmd_description, string Af_weight, string Av_weightunit, string Af_count, string Av_countunit)
         {

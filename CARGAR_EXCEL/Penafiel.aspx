@@ -198,7 +198,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Peñafiel</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -313,6 +313,87 @@
             
             <!-- /.card -->
 
+          </div>
+             <div class="col-12 col-sm-12">
+            <div class="card card-primary card-outline card-outline-tabs">
+              <div class="card-header p-0 border-bottom-0">
+                <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">2022</a>
+                  </li>
+                 <%-- <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">2022</a>
+                  </li>--%>
+                  
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-four-tabContent">
+                  <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
+                     <div class="container-fluid">
+                         <h5 class="mb-2">Total de ordenes registradas</h5>
+                         <div class="row">
+                             
+                             <div class="col-md-3 col-sm-3 col-3">
+                            <div class="info-box">
+                              <span class="info-box-icon" style="background-color:#FF5733"><i class="far fa-calendar"></i></span>
+
+                              <div class="info-box-content">
+                                <span class="info-box-text">Agosto</span>
+                                <span class="info-box-number">Total: <asp:Label ID="Agostot" runat="server"></asp:Label></span>
+                              </div>
+                              <!-- /.info-box-content -->
+                            </div>
+                        <!-- /.info-box -->
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-3">
+                        <div class="info-box">
+                          <span class="info-box-icon bg-warning"><i class="far fa-calendar"></i></span>
+
+                          <div class="info-box-content">
+                            <span class="info-box-text">Septiembre</span>
+                            <span class="info-box-number">Total: <asp:Label ID="Septiembret" runat="server"></asp:Label></span>
+                          </div>
+                          <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-3">
+                        <div class="info-box">
+                          <span class="info-box-icon" style="background-color:#F1A4EB"><i class="far fa-calendar"></i></span>
+
+                          <div class="info-box-content">
+                            <span class="info-box-text">Octubre</span>
+                            <span class="info-box-number">Total: <asp:Label ID="Octubret" runat="server"></asp:Label></span>
+                          </div>
+                          <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                      </div>
+                             <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box">
+                                  <span class="info-box-icon bg-primary"><i class="far fa-calendar"></i></span>
+
+                                  <div class="info-box-content">
+                                    <span class="info-box-text">Noviembre</span>
+                                    <span class="info-box-number">Total: <asp:Label ID="Noviembret" runat="server"></asp:Label></span>
+                                  </div>
+                                  <!-- /.info-box-content -->
+                                </div>
+                                <!-- /.info-box -->
+                              </div>
+                         </div>
+                     </div>
+                      
+                  </div>
+                  <%--<div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
+                     Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam.
+                  </div>--%>
+                  
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
           </div>
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID <img src="dist/img/prod-5.jpg" />to make the widgets sortable)-->
@@ -753,7 +834,7 @@
     <strong>Copyright &copy; 2021 <a href="http://tdr.com.mx/">TDR Soluciones Logísticas</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.1.0
+      <b>Version</b> 1.2.0
     </div>
   </footer>
 

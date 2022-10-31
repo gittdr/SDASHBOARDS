@@ -562,6 +562,9 @@ namespace CARGAR_EXCEL
         }
         public void RCReporte()
         {
+            DateTime Nfecha = DateTime.Now;
+            //string nfecha = Nfecha.ToString("yyyy");
+            string nfecha = Nfecha.ToString("2022");
             //DATOS PARA LA GRAFICA
             DataTable roct = facLabControler.TotalProcAgoDhl();
             foreach (DataRow ioct in roct.Rows)
@@ -569,11 +572,31 @@ namespace CARGAR_EXCEL
                 int AgostoV = Convert.ToInt32(ioct["total"].ToString());
                 Agosto.Value = Convert.ToString(AgostoV);
             }
+            DataTable rocty = facLabControler.TotalProcAgoDhlyear(nfecha);
+            if (rocty.Rows.Count == 0)
+            {
+                Agostot.Text = "0";
+            }
+            foreach (DataRow iocty in rocty.Rows)
+            {
+                int AgostoVy = Convert.ToInt32(iocty["total"].ToString());
+                Agostot.Text = Convert.ToString(AgostoVy);
+            }
             DataTable rsep = facLabControler.TotalProcSepDhl();
             foreach (DataRow isep in rsep.Rows)
             {
                 int SeptiembreV = Convert.ToInt32(isep["total"].ToString());
                 Septiembre.Value = Convert.ToString(SeptiembreV);
+            }
+            DataTable rsept = facLabControler.TotalProcSepDhlyear(nfecha);
+            if (rsept.Rows.Count == 0)
+            {
+                Septiembret.Text = "0";
+            }
+            foreach (DataRow isept in rsept.Rows)
+            {
+                int SeptiembreVt = Convert.ToInt32(isept["total"].ToString());
+                Septiembret.Text = Convert.ToString(SeptiembreVt);
             }
             DataTable roctubre = facLabControler.TotalProcOctubreDhl();
             foreach (DataRow ioctubre in roctubre.Rows)
@@ -581,11 +604,31 @@ namespace CARGAR_EXCEL
                 int OctubreV = Convert.ToInt32(ioctubre["total"].ToString());
                 Octubre.Value = Convert.ToString(OctubreV);
             }
+            DataTable roctubret = facLabControler.TotalProcOctubreDhlyear(nfecha);
+            if (roctubret.Rows.Count == 0)
+            {
+                Octubret.Text = "0";
+            }
+            foreach (DataRow ioctubret in roctubret.Rows)
+            {
+                int OctubreVt = Convert.ToInt32(ioctubret["total"].ToString());
+                Octubret.Text = Convert.ToString(OctubreVt);
+            }
             DataTable rnoviembre = facLabControler.TotalProcNoviembreDhl();
             foreach (DataRow inoviembre in rnoviembre.Rows)
             {
                 int NoviembreV = Convert.ToInt32(inoviembre["total"].ToString());
                 Noviembre.Value = Convert.ToString(NoviembreV);
+            }
+            DataTable rnoviembret = facLabControler.TotalProcNoviembreDhlyear(nfecha);
+            if (rnoviembret.Rows.Count == 0)
+            {
+                Noviembret.Text = "0";
+            }
+            foreach (DataRow inoviembret in rnoviembret.Rows)
+            {
+                int NoviembreVt = Convert.ToInt32(inoviembret["total"].ToString());
+                Noviembret.Text = Convert.ToString(NoviembreVt);
             }
 
             //TOTAL DE ORDENES PROCESADAS

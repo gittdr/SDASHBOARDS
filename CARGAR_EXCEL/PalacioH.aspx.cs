@@ -398,30 +398,105 @@ namespace CARGAR_EXCEL
         }
         public void RCReporte()
         {
+            DateTime Nfecha = DateTime.Now;
+            //string nfecha = Nfecha.ToString("yyyy");
+            string nfecha = Nfecha.ToString("2022");
             DataTable roct = facLabControler.TotalProcAgoPalacioH();
             foreach (DataRow ioct in roct.Rows)
             {
                 int AgostoV = Convert.ToInt32(ioct["total"].ToString());
                 Agosto.Value = Convert.ToString(AgostoV);
             }
+            DataTable rocty = facLabControler.TotalProcAgoPalacioHyear(nfecha);
+            if (rocty.Rows.Count == 0)
+            {
+                Agostot.Text = "0";
+            }
+            else
+            {
+                foreach (DataRow iocty in rocty.Rows)
+                {
+                    int AgostoVy = Convert.ToInt32(iocty["total"].ToString());
+                    Agostot.Text = Convert.ToString(AgostoVy);
+                }
+            }
+            
             DataTable rsep = facLabControler.TotalProcSepPalacioH();
             foreach (DataRow isep in rsep.Rows)
             {
                 int SeptiembreV = Convert.ToInt32(isep["total"].ToString());
                 Septiembre.Value = Convert.ToString(SeptiembreV);
             }
+
+            DataTable rsept = facLabControler.TotalProcSepPalacioHyear(nfecha);
+            if (rsept.Rows.Count == 0)
+            {
+                Septiembret.Text = "0";
+            }
+            else
+            {
+                foreach (DataRow isept in rsept.Rows)
+                {
+                    int SeptiembreVt = Convert.ToInt32(isept["total"].ToString());
+                    Septiembret.Text = Convert.ToString(SeptiembreVt);
+                }
+            }
+            
             DataTable roctubre = facLabControler.TotalProcOctubrePalacioH();
             foreach (DataRow ioctubre in roctubre.Rows)
             {
                 int OctubreV = Convert.ToInt32(ioctubre["total"].ToString());
                 Octubre.Value = Convert.ToString(OctubreV);
             }
+            DataTable roctubret = facLabControler.TotalProcOctubrePalacioHyear(nfecha);
+            if (roctubret.Rows.Count == 0)
+            {
+                Octubret.Text = "0";
+            }
+            else
+            {
+                foreach (DataRow ioctubret in roctubret.Rows)
+                {
+                    int OctubreVt = Convert.ToInt32(ioctubret["total"].ToString());
+                    Octubret.Text = Convert.ToString(OctubreVt);
+                }
+            }
+
+            
             DataTable rnoviembre = facLabControler.TotalProcNoviembrePalacioH();
             foreach (DataRow inoviembre in rnoviembre.Rows)
             {
                 int NoviembreV = Convert.ToInt32(inoviembre["total"].ToString());
                 Noviembre.Value = Convert.ToString(NoviembreV);
             }
+            DataTable rnoviembret = facLabControler.TotalProcNoviembrePalacioHyear(nfecha);
+            if (rnoviembret.Rows.Count == 0)
+            {
+                Noviembret.Text = "0";
+            }
+            else
+            {
+                foreach (DataRow inoviembret in rnoviembret.Rows)
+                {
+                    int NoviembreVt = Convert.ToInt32(inoviembret["total"].ToString());
+                    Noviembret.Text = Convert.ToString(NoviembreVt);
+                }
+            }
+            
+            //DataTable rnoviembret = facLabControler.TotalProcNoviembrePenafielyear(nfecha);
+            //if (rnoviembret.Rows.Count == 0)
+            //{
+            //    Noviembret.Text = "0";
+            //}
+            //else
+            //{
+            //    foreach (DataRow inoviembret in rnoviembret.Rows)
+            //    {
+
+            //        int NoviembreVt = Convert.ToInt32(inoviembret["total"].ToString());
+            //        Noviembret.Text = Convert.ToString(NoviembreVt);
+            //    }
+            //}
 
             DataTable rtds = facLabControler.TotalProcPalacioH();
             

@@ -744,6 +744,36 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcOct2022(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Oct_2022_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcOctubre()
         {
             DataTable dataTable = new DataTable();
@@ -755,6 +785,36 @@ namespace CARGAR_EXCEL.Models
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
                     selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcOctubre2022(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Octubre_2022_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
                     selectCommand.ExecuteNonQuery();
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
                     {
@@ -802,6 +862,36 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcNoviembre2022(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Noviembre_2022_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcAgoPenafiel()
         {
             DataTable dataTable = new DataTable();
@@ -813,6 +903,36 @@ namespace CARGAR_EXCEL.Models
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
                     selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcAgoPenafielyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Ago_Penafiel_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
                     selectCommand.ExecuteNonQuery();
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
                     {
@@ -860,6 +980,36 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcOctubrePenafielyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Octubre_Penafiel_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcNoviembrePenafiel()
         {
             DataTable dataTable = new DataTable();
@@ -871,6 +1021,36 @@ namespace CARGAR_EXCEL.Models
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
                     selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcNoviembrePenafielyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Noviembre_Penafiel_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
                     selectCommand.ExecuteNonQuery();
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
                     {
@@ -918,6 +1098,36 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcOctubrePalacioHyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Octubre_PalacioH_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcNoviembrePalacioH()
         {
             DataTable dataTable = new DataTable();
@@ -929,6 +1139,36 @@ namespace CARGAR_EXCEL.Models
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
                     selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcNoviembrePalacioHyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Noviembre_PalacioH_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
                     selectCommand.ExecuteNonQuery();
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
                     {
@@ -976,6 +1216,36 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcOctubreDhlyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Octubre_Dhl_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcNoviembreDhl()
         {
             DataTable dataTable = new DataTable();
@@ -987,6 +1257,37 @@ namespace CARGAR_EXCEL.Models
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
                     selectCommand.CommandTimeout = 100000;
+
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcNoviembreDhlyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Noviembre_Dhl_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
                     selectCommand.ExecuteNonQuery();
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
                     {
@@ -1034,6 +1335,36 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcAgoPalacioHyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Ago_PalacioH_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcAgoDhl()
         {
             DataTable dataTable = new DataTable();
@@ -1045,6 +1376,36 @@ namespace CARGAR_EXCEL.Models
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
                     selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcAgoDhlyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Ago_Dhl_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
                     selectCommand.ExecuteNonQuery();
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
                     {
@@ -1092,6 +1453,37 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcSep2022(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Sep_2022_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+
         public DataTable TotalProcSepPenafiel()
         {
             DataTable dataTable = new DataTable();
@@ -1103,6 +1495,36 @@ namespace CARGAR_EXCEL.Models
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
                     selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcSepPenafielyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Sep_Penafiel_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
                     selectCommand.ExecuteNonQuery();
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
                     {
@@ -1150,6 +1572,36 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable TotalProcSepPalacioHyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Sep_PalacioH_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcSepDhl()
         {
             DataTable dataTable = new DataTable();
@@ -1161,6 +1613,36 @@ namespace CARGAR_EXCEL.Models
 
                     selectCommand.CommandType = CommandType.StoredProcedure;
                     selectCommand.CommandTimeout = 100000;
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable TotalProcSepDhlyear(string nfecha)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(this._ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Order_Sep_Dhl_year_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+                    selectCommand.Parameters.AddWithValue("@nfecha", (object)nfecha);
                     selectCommand.ExecuteNonQuery();
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
                     {
