@@ -331,7 +331,14 @@
                 <div class="tab-content" id="custom-tabs-four-tabContent">
                   <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
                      <div class="container-fluid">
-                         <h5 class="mb-2">Total de ordenes registradas</h5>
+                         <div class="row">
+                             <div class="col-md-6 col-sm-6 col-6">
+                                 <h5 class="mb-2">Total de ordenes registradas</h5>
+                             </div>
+                             <div class="col-md-6 col-sm-6 col-6 mb-2" style="text-align:right">
+                                 <asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportReportYear" runat="server" />
+                             </div>
+                         </div>
                          <div class="row">
                              
                              <div class="col-md-3 col-sm-3 col-3">
@@ -339,8 +346,8 @@
                               <span class="info-box-icon" style="background-color:#FF5733"><i class="far fa-calendar"></i></span>
 
                               <div class="info-box-content">
-                                <span class="info-box-text">Agosto</span>
-                               <span class="info-box-number">Total: <asp:Label ID="Agostot" runat="server"></asp:Label></span>
+                                <span class="info-box-text">Agosto <a data-toggle="modal" data-target="#modal-RYAGOSTO" class="small-box-footer" style="cursor:pointer"><i class="fas fa-search"></i></a></span>
+                                <span class="info-box-number">Total: <asp:Label ID="Agostot" runat="server"></asp:Label></span>
                               </div>
                               <!-- /.info-box-content -->
                             </div>
@@ -351,7 +358,7 @@
                           <span class="info-box-icon bg-warning"><i class="far fa-calendar"></i></span>
 
                           <div class="info-box-content">
-                            <span class="info-box-text">Septiembre</span>
+                            <span class="info-box-text">Septiembre <a data-toggle="modal" data-target="#modal-RYSEPTIEMBRE" class="small-box-footer" style="cursor:pointer"><i class="fas fa-search"></i></a></span>
                             <span class="info-box-number">Total: <asp:Label ID="Septiembret" runat="server"></asp:Label></span>
                           </div>
                           <!-- /.info-box-content -->
@@ -363,7 +370,7 @@
                           <span class="info-box-icon" style="background-color:#F1A4EB"><i class="far fa-calendar"></i></span>
 
                           <div class="info-box-content">
-                            <span class="info-box-text">Octubre</span>
+                            <span class="info-box-text">Octubre <a data-toggle="modal" data-target="#modal-RYOCTUBRE" class="small-box-footer" style="cursor:pointer"><i class="fas fa-search"></i></a></span>
                             <span class="info-box-number">Total: <asp:Label ID="Octubret" runat="server"></asp:Label></span>
                           </div>
                           <!-- /.info-box-content -->
@@ -375,7 +382,7 @@
                                   <span class="info-box-icon bg-primary"><i class="far fa-calendar"></i></span>
 
                                   <div class="info-box-content">
-                                    <span class="info-box-text">Noviembre</span>
+                                    <span class="info-box-text">Noviembre <a data-toggle="modal" data-target="#modal-RYNOVIEMBRE" class="small-box-footer" style="cursor:pointer"><i class="fas fa-search"></i></a></span>
                                     <span class="info-box-number">Total: <asp:Label ID="Noviembret" runat="server"></asp:Label></span>
                                   </div>
                                   <!-- /.info-box-content -->
@@ -402,6 +409,426 @@
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
+         <div class="modal fade" id="modal-RYAGOSTO">
+                <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
+                      <div class="modal-content" style="background-color:#FF5733">
+                            <div class="modal-header">
+                                <table style="border-collapse:collapse;width:100% !important">
+                                    <tr>
+                                        <td><h4 class="modal-title" style="color:white"><b>Total de ordenes registradas en Agosto(<span class="info-box-number"><asp:Label ID="TAgosto" runat="server"></asp:Label></span>)</b></h4></td>
+                                        <td><asp:Button Text="Download" CssClass="btn btn-dark" OnClick="ExportExcelRYAgosto2022" runat="server" /></td>
+                                    </tr>
+                                </table>
+                              
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body" style="height: 40vh;overflow-y: auto;background-color:white;color:black !important">
+                                 <div class="col-sm-12">
+                            
+                                                   
+                                                    <asp:UpdatePanel ID="UpdatePanel5" UpdateMode="Conditional" runat="server">
+                                                        <ContentTemplate>
+                                                             <asp:Table id="TableAgosto2022" class="table table-striped" runat="server" Font-Names="ARIAL">
+                                                                <asp:TableRow>
+                                                                    <asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Orden</b>
+                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Segmento</b>
+                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Billto</b>
+                                                                    </asp:TableCell>
+                                                                    <asp:TableCell HorizontalAlign="Center">
+                                                                        <b>FechaTimbrado</b>
+                                                                    </asp:TableCell>
+                                                                </asp:TableRow>
+
+                                                            </asp:Table>
+                                         </center>   
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                
+                                        </div>
+                                <%--<table class="table table-sm">
+                                  <thead>
+                                    <tr>
+                                      <th style="width: 10px">#</th>
+                                      <th>Task</th>
+                                      <th>Progress</th>
+                                      <th style="width: 40px">Label</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1.</td>
+                                      <td>Update software</td>
+                                      <td>
+                                        <div class="progress progress-xs">
+                                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-danger">55%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2.</td>
+                                      <td>Clean database</td>
+                                      <td>
+                                        <div class="progress progress-xs">
+                                          <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-warning">70%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>3.</td>
+                                      <td>Cron job running</td>
+                                      <td>
+                                        <div class="progress progress-xs progress-striped active">
+                                          <div class="progress-bar bg-primary" style="width: 30%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-primary">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>4.</td>
+                                      <td>Fix and squish bugs</td>
+                                      <td>
+                                        <div class="progress progress-xs progress-striped active">
+                                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-success">90%</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>--%>
+                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                              
+                              <!-- /.card-body -->
+                            </div>
+                        </div>
+                   <%-- <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>--%>
+                  </div>
+              <!-- /.modal-content -->
+            </div>
+         <div class="modal fade" id="modal-RYSEPTIEMBRE">
+                <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
+                      <div class="modal-content bg-warning" >
+                            <div class="modal-header">
+                                <table style="border-collapse:collapse;width:100% !important">
+                                    <tr>
+                                        <td><h4 class="modal-title"><b>Total de ordenes registradas en Septiembre(<span class="info-box-number"><asp:Label ID="TSeptiembre" runat="server"></asp:Label></span>)</b></h4></td>
+                                        <td><asp:Button Text="Download" CssClass="btn btn-dark" OnClick="ExportExcelRYSeptiembre2022" runat="server" /></td>
+                                    </tr>
+                                </table>
+                              
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body" style="height: 40vh;overflow-y: auto;background-color:white;color:black !important">
+                                 <div class="col-sm-12">
+                            
+                                                   
+                                                    <asp:UpdatePanel ID="UpdatePanel6" UpdateMode="Conditional" runat="server">
+                                                        <ContentTemplate>
+                                                             <asp:Table id="TableSeptiembre2022" class="table table-striped" runat="server" Font-Names="ARIAL">
+                                                                <asp:TableRow>
+                                                                    <asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Orden</b>
+                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Segmento</b>
+                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Billto</b>
+                                                                    </asp:TableCell>
+                                                                    <asp:TableCell HorizontalAlign="Center">
+                                                                        <b>FechaTimbrado</b>
+                                                                    </asp:TableCell>
+                                                                </asp:TableRow>
+
+                                                            </asp:Table>
+                                         </center>   
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                
+                                        </div>
+                                <%--<table class="table table-sm">
+                                  <thead>
+                                    <tr>
+                                      <th style="width: 10px">#</th>
+                                      <th>Task</th>
+                                      <th>Progress</th>
+                                      <th style="width: 40px">Label</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1.</td>
+                                      <td>Update software</td>
+                                      <td>
+                                        <div class="progress progress-xs">
+                                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-danger">55%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2.</td>
+                                      <td>Clean database</td>
+                                      <td>
+                                        <div class="progress progress-xs">
+                                          <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-warning">70%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>3.</td>
+                                      <td>Cron job running</td>
+                                      <td>
+                                        <div class="progress progress-xs progress-striped active">
+                                          <div class="progress-bar bg-primary" style="width: 30%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-primary">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>4.</td>
+                                      <td>Fix and squish bugs</td>
+                                      <td>
+                                        <div class="progress progress-xs progress-striped active">
+                                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-success">90%</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>--%>
+                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                              
+                              <!-- /.card-body -->
+                            </div>
+                        </div>
+                   <%-- <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>--%>
+                  </div>
+              <!-- /.modal-content -->
+            </div>
+         <div class="modal fade" id="modal-RYOCTUBRE">
+                <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
+                      <div class="modal-content" style="background-color:#F1A4EB">
+                            <div class="modal-header">
+                                <table style="border-collapse:collapse;width:100% !important">
+                                    <tr>
+                                        <td><h4 class="modal-title"><b>Total de ordenes registradas en Octubre(<span class="info-box-number"><asp:Label ID="TOctubre" runat="server"></asp:Label></span>)</b></h4></td>
+                                        <td><asp:Button Text="Download" CssClass="btn btn-dark" OnClick="ExportExcelRYOctubre2022" runat="server" /></td>
+                                    </tr>
+                                </table>
+                              
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body" style="height: 40vh;overflow-y: auto;background-color:white;color:black !important">
+                                 <div class="col-sm-12">
+                            
+                                                   
+                                                    <asp:UpdatePanel ID="UpdatePanel7" UpdateMode="Conditional" runat="server">
+                                                        <ContentTemplate>
+                                                             <asp:Table id="TableOctubre2022" class="table table-striped" runat="server" Font-Names="ARIAL">
+                                                                <asp:TableRow>
+                                                                    <asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Orden</b>
+                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Segmento</b>
+                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Billto</b>
+                                                                    </asp:TableCell>
+                                                                    <asp:TableCell HorizontalAlign="Center">
+                                                                        <b>FechaTimbrado</b>
+                                                                    </asp:TableCell>
+                                                                </asp:TableRow>
+
+                                                            </asp:Table>
+                                         </center>   
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                
+                                        </div>
+                                <%--<table class="table table-sm">
+                                  <thead>
+                                    <tr>
+                                      <th style="width: 10px">#</th>
+                                      <th>Task</th>
+                                      <th>Progress</th>
+                                      <th style="width: 40px">Label</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1.</td>
+                                      <td>Update software</td>
+                                      <td>
+                                        <div class="progress progress-xs">
+                                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-danger">55%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2.</td>
+                                      <td>Clean database</td>
+                                      <td>
+                                        <div class="progress progress-xs">
+                                          <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-warning">70%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>3.</td>
+                                      <td>Cron job running</td>
+                                      <td>
+                                        <div class="progress progress-xs progress-striped active">
+                                          <div class="progress-bar bg-primary" style="width: 30%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-primary">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>4.</td>
+                                      <td>Fix and squish bugs</td>
+                                      <td>
+                                        <div class="progress progress-xs progress-striped active">
+                                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-success">90%</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>--%>
+                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                              
+                              <!-- /.card-body -->
+                            </div>
+                        </div>
+                   <%-- <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>--%>
+                  </div>
+              <!-- /.modal-content -->
+            </div>
+         <div class="modal fade" id="modal-RYNOVIEMBRE">
+                <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
+                      <div class="modal-content bg-primary">
+                            <div class="modal-header">
+                                <table style="border-collapse:collapse;width:100% !important">
+                                    <tr>
+                                        <td><h4 class="modal-title" style="color:white"><b>Total de ordenes registradas en Noviembre(<span class="info-box-number"><asp:Label ID="TNoviembre" runat="server"></asp:Label></span>)</b></h4></td>
+                                        <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcelRYNoviembre2022" runat="server" /></td>
+                                    </tr>
+                                </table>
+                              
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body" style="height: 40vh;overflow-y: auto;background-color:white;color:black !important">
+                                 <div class="col-sm-12">
+                            
+                                                   
+                                                    <asp:UpdatePanel ID="UpdatePanel8" UpdateMode="Conditional" runat="server">
+                                                        <ContentTemplate>
+                                                             <asp:Table id="TableNoviembre2022" class="table table-striped" runat="server" Font-Names="ARIAL">
+                                                                <asp:TableRow>
+                                                                    <asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Orden</b>
+                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Segmento</b>
+                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
+                                                                        <b>Billto</b>
+                                                                    </asp:TableCell>
+                                                                    <asp:TableCell HorizontalAlign="Center">
+                                                                        <b>FechaTimbrado</b>
+                                                                    </asp:TableCell>
+                                                                </asp:TableRow>
+
+                                                            </asp:Table>
+                                         </center>   
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                
+                                        </div>
+                                <%--<table class="table table-sm">
+                                  <thead>
+                                    <tr>
+                                      <th style="width: 10px">#</th>
+                                      <th>Task</th>
+                                      <th>Progress</th>
+                                      <th style="width: 40px">Label</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1.</td>
+                                      <td>Update software</td>
+                                      <td>
+                                        <div class="progress progress-xs">
+                                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-danger">55%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2.</td>
+                                      <td>Clean database</td>
+                                      <td>
+                                        <div class="progress progress-xs">
+                                          <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-warning">70%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>3.</td>
+                                      <td>Cron job running</td>
+                                      <td>
+                                        <div class="progress progress-xs progress-striped active">
+                                          <div class="progress-bar bg-primary" style="width: 30%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-primary">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td>4.</td>
+                                      <td>Fix and squish bugs</td>
+                                      <td>
+                                        <div class="progress progress-xs progress-striped active">
+                                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                                        </div>
+                                      </td>
+                                      <td><span class="badge bg-success">90%</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>--%>
+                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                              
+                              <!-- /.card-body -->
+                            </div>
+                        </div>
+                   <%-- <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>--%>
+                  </div>
+              <!-- /.modal-content -->
+            </div>
             <div class="modal fade" id="modal-default">
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-info">
@@ -831,7 +1258,7 @@
     <strong>Copyright &copy; 2021 <a href="http://tdr.com.mx/">TDR Soluciones Logísticas</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.2.0
+      <b>Version</b> 1.3.0
     </div>
   </footer>
 

@@ -367,6 +367,422 @@ namespace CARGAR_EXCEL.Models
             }
             return dataTable;
         }
+        public DataTable RyAgosto2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM Reporte_Timbradas WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 08 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyAgostoPenafiel2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 08 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyAgostoPalacioH2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 08 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyAgostoDhl2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtDhl WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 08 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RySeptiembre2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM Reporte_Timbradas WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 09 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RySeptiembrePenafiel2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 09 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RySeptiembrePalacioH2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 09 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RySeptiembreDhl2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtDhl WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 09 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyOctubre2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM Reporte_Timbradas WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 10 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyOctubrePenafiel2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 10 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyOctubrePalacioH2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 10 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyOctubreDhl2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtDhl WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 10 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyNoviembre2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM Reporte_Timbradas WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 11 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyNoviembrePenafiel2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtPenafiel WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 11 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyNoviembrePalacioH2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtPlacioH WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 11 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable RyNoviembreDhl2022()
+        {
+            DataTable dataTable = new DataTable();
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                using (SqlCommand selectCommand = new SqlCommand("SELECT orden, segmento, billto, fechaTimbrado FROM RtDhl WHERE fechaTimbrado is not null AND MONTH(try_CONVERT(DATETIME, fechaTimbrado)) = 11 AND YEAR(try_CONVERT(DATETIME, fechaTimbrado)) = '2022' GROUP BY orden, segmento, billto, fechaTimbrado ORDER BY fechaTimbrado DESC", connection))
+                {
+                    selectCommand.CommandType = CommandType.Text;
+                    selectCommand.CommandTimeout = 100000;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                        }
+                        catch (SqlException ex)
+                        {
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable TotalProcTA()
         {
             DataTable dataTable = new DataTable();

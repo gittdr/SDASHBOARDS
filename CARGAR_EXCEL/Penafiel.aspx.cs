@@ -70,6 +70,10 @@ namespace CARGAR_EXCEL
             OTAPenafiel();
             OTMPenafiel();
             OTCPenafiel();
+            RyAgosto();
+            RySeptiembre();
+            RyOctubre();
+            RyNoviembre();
 
 
 
@@ -79,6 +83,251 @@ namespace CARGAR_EXCEL
         protected void Button1_Click(object sender, EventArgs e)
         {
             
+        }
+        protected void ExportReportYear(object sender, EventArgs e)
+        {
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Year_2022_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dataTable, "2022");
+
+                                Response.Clear();
+                                Response.Buffer = true;
+                                Response.Charset = "";
+                                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenes2022Penafiel.xlsx");
+                                using (MemoryStream MyMemoryStream = new MemoryStream())
+                                {
+                                    wb.SaveAs(MyMemoryStream);
+                                    MyMemoryStream.WriteTo(Response.OutputStream);
+                                    Response.Flush();
+                                    Response.End();
+                                }
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+
+
+        }
+        protected void ExportExcelRYAgosto2022(object sender, EventArgs e)
+        {
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Year_2022_Agosto_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dataTable, "2022");
+
+                                Response.Clear();
+                                Response.Buffer = true;
+                                Response.Charset = "";
+                                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenesPenafielAgosto2022.xlsx");
+                                using (MemoryStream MyMemoryStream = new MemoryStream())
+                                {
+                                    wb.SaveAs(MyMemoryStream);
+                                    MyMemoryStream.WriteTo(Response.OutputStream);
+                                    Response.Flush();
+                                    Response.End();
+                                }
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+
+
+        }
+        protected void ExportExcelRYSeptiembre2022(object sender, EventArgs e)
+        {
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Year_2022_Septiembre_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dataTable, "2022");
+
+                                Response.Clear();
+                                Response.Buffer = true;
+                                Response.Charset = "";
+                                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenesPenafielSeptiembre2022.xlsx");
+                                using (MemoryStream MyMemoryStream = new MemoryStream())
+                                {
+                                    wb.SaveAs(MyMemoryStream);
+                                    MyMemoryStream.WriteTo(Response.OutputStream);
+                                    Response.Flush();
+                                    Response.End();
+                                }
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+
+
+        }
+        protected void ExportExcelRYOctubre2022(object sender, EventArgs e)
+        {
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Year_2022_Octubre_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dataTable, "2022");
+
+                                Response.Clear();
+                                Response.Buffer = true;
+                                Response.Charset = "";
+                                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenesPenafielOctubre2022.xlsx");
+                                using (MemoryStream MyMemoryStream = new MemoryStream())
+                                {
+                                    wb.SaveAs(MyMemoryStream);
+                                    MyMemoryStream.WriteTo(Response.OutputStream);
+                                    Response.Flush();
+                                    Response.End();
+                                }
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+
+
+        }
+        protected void ExportExcelRYNoviembre2022(object sender, EventArgs e)
+        {
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Year_2022_Noviembre_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dataTable, "2022");
+
+                                Response.Clear();
+                                Response.Buffer = true;
+                                Response.Charset = "";
+                                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenesPenafielNoviembre2022.xlsx");
+                                using (MemoryStream MyMemoryStream = new MemoryStream())
+                                {
+                                    wb.SaveAs(MyMemoryStream);
+                                    MyMemoryStream.WriteTo(Response.OutputStream);
+                                    Response.Flush();
+                                    Response.End();
+                                }
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+
+
         }
         protected void ExportExcel(object sender, EventArgs e)
         {
@@ -560,6 +809,174 @@ namespace CARGAR_EXCEL
 
             }
         }
+        public async Task RyAgosto()
+        {
+            DataTable cargaStops = facLabControler.RyAgostoPenafiel2022();
+            int numCells = 4;
+            int rownum = 0;
+            foreach (DataRow item in cargaStops.Rows)
+            {
+
+
+                TableRow r = new TableRow();
+                for (int i = 0; i < numCells; i++)
+                {
+                    if (i == 0)
+                    {
+                        HyperLink hp1 = new HyperLink();
+                        hp1.ID = "hpIndex" + rownum.ToString();
+                        hp1.Text = item[i].ToString();
+                        //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
+                        TableCell c = new TableCell();
+                        c.Controls.Add(hp1);
+                        r.Cells.Add(c);
+
+                    }
+                    else
+                    {
+                        TableCell c = new TableCell();
+                        c.Controls.Add(new LiteralControl("row "
+                            + rownum.ToString() + ", cell " + i.ToString()));
+                        c.Text = item[i].ToString();
+                        r.Cells.Add(c);
+                    }
+                }
+
+
+                TableAgosto2022.Rows.Add(r);
+                rownum++;
+
+                //FIN
+
+
+            }
+        }
+        public async Task RySeptiembre()
+        {
+            DataTable cargaStops = facLabControler.RySeptiembrePenafiel2022();
+            int numCells = 4;
+            int rownum = 0;
+            foreach (DataRow item in cargaStops.Rows)
+            {
+
+
+                TableRow r = new TableRow();
+                for (int i = 0; i < numCells; i++)
+                {
+                    if (i == 0)
+                    {
+                        HyperLink hp1 = new HyperLink();
+                        hp1.ID = "hpIndex" + rownum.ToString();
+                        hp1.Text = item[i].ToString();
+                        //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
+                        TableCell c = new TableCell();
+                        c.Controls.Add(hp1);
+                        r.Cells.Add(c);
+
+                    }
+                    else
+                    {
+                        TableCell c = new TableCell();
+                        c.Controls.Add(new LiteralControl("row "
+                            + rownum.ToString() + ", cell " + i.ToString()));
+                        c.Text = item[i].ToString();
+                        r.Cells.Add(c);
+                    }
+                }
+
+
+                TableSeptiembre2022.Rows.Add(r);
+                rownum++;
+
+                //FIN
+
+
+            }
+        }
+        public async Task RyOctubre()
+        {
+            DataTable cargaStops = facLabControler.RyOctubrePenafiel2022();
+            int numCells = 4;
+            int rownum = 0;
+            foreach (DataRow item in cargaStops.Rows)
+            {
+
+
+                TableRow r = new TableRow();
+                for (int i = 0; i < numCells; i++)
+                {
+                    if (i == 0)
+                    {
+                        HyperLink hp1 = new HyperLink();
+                        hp1.ID = "hpIndex" + rownum.ToString();
+                        hp1.Text = item[i].ToString();
+                        //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
+                        TableCell c = new TableCell();
+                        c.Controls.Add(hp1);
+                        r.Cells.Add(c);
+
+                    }
+                    else
+                    {
+                        TableCell c = new TableCell();
+                        c.Controls.Add(new LiteralControl("row "
+                            + rownum.ToString() + ", cell " + i.ToString()));
+                        c.Text = item[i].ToString();
+                        r.Cells.Add(c);
+                    }
+                }
+
+
+                TableOctubre2022.Rows.Add(r);
+                rownum++;
+
+                //FIN
+
+
+            }
+        }
+        public async Task RyNoviembre()
+        {
+            DataTable cargaStops = facLabControler.RyNoviembrePenafiel2022();
+            int numCells = 4;
+            int rownum = 0;
+            foreach (DataRow item in cargaStops.Rows)
+            {
+
+
+                TableRow r = new TableRow();
+                for (int i = 0; i < numCells; i++)
+                {
+                    if (i == 0)
+                    {
+                        HyperLink hp1 = new HyperLink();
+                        hp1.ID = "hpIndex" + rownum.ToString();
+                        hp1.Text = item[i].ToString();
+                        //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
+                        TableCell c = new TableCell();
+                        c.Controls.Add(hp1);
+                        r.Cells.Add(c);
+
+                    }
+                    else
+                    {
+                        TableCell c = new TableCell();
+                        c.Controls.Add(new LiteralControl("row "
+                            + rownum.ToString() + ", cell " + i.ToString()));
+                        c.Text = item[i].ToString();
+                        r.Cells.Add(c);
+                    }
+                }
+
+
+                TableNoviembre2022.Rows.Add(r);
+                rownum++;
+
+                //FIN
+
+
+            }
+        }
         public void RCReporte()
         {
             DateTime Nfecha = DateTime.Now;
@@ -577,6 +994,7 @@ namespace CARGAR_EXCEL
 
                 int AgostoVt = Convert.ToInt32(ioct22["total"].ToString());
                 Agostot.Text = Convert.ToString(AgostoVt);
+                TAgosto.Text = Convert.ToString(AgostoVt);
             }
             DataTable rsep = facLabControler.TotalProcSepPenafiel();
             foreach (DataRow isep in rsep.Rows)
@@ -590,6 +1008,7 @@ namespace CARGAR_EXCEL
 
                 int SeptiembreVt = Convert.ToInt32(isep22["total"].ToString());
                 Septiembret.Text = Convert.ToString(SeptiembreVt);
+                TSeptiembre.Text = Convert.ToString(SeptiembreVt);
             }
             DataTable roctubre = facLabControler.TotalProcOctubrePenafiel();
             foreach (DataRow ioctubre in roctubre.Rows)
@@ -602,6 +1021,7 @@ namespace CARGAR_EXCEL
             {
                 int OctubreVt = Convert.ToInt32(ioctubret["total"].ToString());
                 Octubret.Text = Convert.ToString(OctubreVt);
+                TOctubre.Text = Convert.ToString(OctubreVt);
             }
             DataTable rnoviembre = facLabControler.TotalProcNoviembrePenafiel();
             foreach (DataRow inoviembre in rnoviembre.Rows)
@@ -614,6 +1034,7 @@ namespace CARGAR_EXCEL
             if (rnoviembret.Rows.Count == 0)
             {
                 Noviembret.Text = "0";
+                TNoviembre.Text = "0";
             }
             else
             {
@@ -622,6 +1043,7 @@ namespace CARGAR_EXCEL
 
                     int NoviembreVt = Convert.ToInt32(inoviembret["total"].ToString());
                     Noviembret.Text = Convert.ToString(NoviembreVt);
+                    TNoviembre.Text = Convert.ToString(NoviembreVt);
                 }
             }
             //int NoviembreV = 0;

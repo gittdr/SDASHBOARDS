@@ -14,6 +14,70 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.getFacturas();
         }
+        public DataTable RyAgosto2022()
+        {
+            return this.modelFact.RyAgosto2022();
+        }
+        public DataTable RyAgostoPenafiel2022()
+        {
+            return this.modelFact.RyAgostoPenafiel2022();
+        }
+        public DataTable RyAgostoPalacioH2022()
+        {
+            return this.modelFact.RyAgostoPalacioH2022();
+        }
+        public DataTable RyAgostoDhl2022()
+        {
+            return this.modelFact.RyAgostoDhl2022();
+        }
+        public DataTable RySeptiembre2022()
+        {
+            return this.modelFact.RySeptiembre2022();
+        }
+        public DataTable RyOctubre2022()
+        {
+            return this.modelFact.RyOctubre2022();
+        }
+        public DataTable RyNoviembre2022()
+        {
+            return this.modelFact.RyNoviembre2022();
+        }
+        public DataTable RySeptiembrePenafiel2022()
+        {
+            return this.modelFact.RySeptiembrePenafiel2022();
+        }
+        public DataTable RyOctubrePenafiel2022()
+        {
+            return this.modelFact.RyOctubrePenafiel2022();
+        }
+        public DataTable RyNoviembrePenafiel2022()
+        {
+            return this.modelFact.RyNoviembrePenafiel2022();
+        }
+        public DataTable RySeptiembrePalacioH2022()
+        {
+            return this.modelFact.RySeptiembrePalacioH2022();
+        }
+        public DataTable RyOctubrePalacioH2022()
+        {
+            return this.modelFact.RyOctubrePalacioH2022();
+        }
+        public DataTable RyNoviembrePalacioH2022()
+        {
+            return this.modelFact.RyNoviembrePalacioH2022();
+        }
+        public DataTable RySeptiembreDhl2022()
+        {
+            return this.modelFact.RySeptiembreDhl2022();
+        }
+        public DataTable RyOctubreDhl2022()
+        {
+            return this.modelFact.RyOctubreDhl2022();
+        }
+        public DataTable RyNoviembreDhl2022()
+        {
+            return this.modelFact.RyNoviembreDhl2022();
+        }
         public DataTable OTA()
         {
             return this.modelFact.OTA();
