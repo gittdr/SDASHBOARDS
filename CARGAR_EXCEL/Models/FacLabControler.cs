@@ -42,6 +42,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.RyNoviembre2022();
         }
+        public DataTable RyDiciembre2022()
+        {
+            return this.modelFact.RyDiciembre2022();
+        }
         public DataTable RySeptiembrePenafiel2022()
         {
             return this.modelFact.RySeptiembrePenafiel2022();
@@ -53,6 +57,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable RyNoviembrePenafiel2022()
         {
             return this.modelFact.RyNoviembrePenafiel2022();
+        }
+        public DataTable RyDiciembrePenafiel2022()
+        {
+            return this.modelFact.RyDiciembrePenafiel2022();
         }
         public DataTable RySeptiembrePalacioH2022()
         {
@@ -66,6 +74,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.RyNoviembrePalacioH2022();
         }
+        public DataTable RyDiciembrePalacioH2022()
+        {
+            return this.modelFact.RyDiciembrePalacioH2022();
+        }
         public DataTable RySeptiembreDhl2022()
         {
             return this.modelFact.RySeptiembreDhl2022();
@@ -77,6 +89,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable RyNoviembreDhl2022()
         {
             return this.modelFact.RyNoviembreDhl2022();
+        }
+        public DataTable RyDiciembreDhl2022()
+        {
+            return this.modelFact.RyDiciembreDhl2022();
         }
         public DataTable OTA()
         {
@@ -214,9 +230,17 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcNoviembre();
         }
+        public DataTable TotalProcDiciembre()
+        {
+            return this.modelFact.TotalProcDiciembre();
+        }
         public DataTable TotalProcNoviembre2022(string nfecha)
         {
             return this.modelFact.TotalProcNoviembre2022(nfecha);
+        }
+        public DataTable TotalProcDiciembre2022(string nfecha)
+        {
+            return this.modelFact.TotalProcDiciembre2022(nfecha);
         }
         public DataTable TotalProcAgoPenafiel()
         {
@@ -238,9 +262,17 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcNoviembrePenafiel();
         }
+        public DataTable TotalProcDiciembrePenafiel()
+        {
+            return this.modelFact.TotalProcDiciembrePenafiel();
+        }
         public DataTable TotalProcNoviembrePenafielyear(string nfecha)
         {
             return this.modelFact.TotalProcNoviembrePenafielyear(nfecha);
+        }
+        public DataTable TotalProcDiciembrePenafielyear(string nfecha)
+        {
+            return this.modelFact.TotalProcDiciembrePenafielyear(nfecha);
         }
         public DataTable TotalProcOctubrePalacioH()
         {
@@ -254,9 +286,17 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcNoviembrePalacioH();
         }
+        public DataTable TotalProcDiciembrePalacioH()
+        {
+            return this.modelFact.TotalProcDiciembrePalacioH();
+        }
         public DataTable TotalProcNoviembrePalacioHyear(string nfecha)
         {
             return this.modelFact.TotalProcNoviembrePalacioHyear(nfecha);
+        }
+        public DataTable TotalProcDiciembrePalacioHyear(string nfecha)
+        {
+            return this.modelFact.TotalProcDiciembrePalacioHyear(nfecha);
         }
         public DataTable TotalProcOctubreDhl()
         {
@@ -266,9 +306,17 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcOctubreDhlyear(nfecha);
         }
+        public DataTable TotalProcDiciembreDhlyear(string nfecha)
+        {
+            return this.modelFact.TotalProcDiciembreDhlyear(nfecha);
+        }
         public DataTable TotalProcNoviembreDhl()
         {
             return this.modelFact.TotalProcNoviembreDhl();
+        }
+        public DataTable TotalProcDiciembreDhl()
+        {
+            return this.modelFact.TotalProcDiciembreDhl();
         }
         public DataTable TotalProcNoviembreDhlyear(string nfecha)
         {

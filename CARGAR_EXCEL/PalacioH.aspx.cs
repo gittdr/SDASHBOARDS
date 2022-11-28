@@ -74,7 +74,7 @@ namespace CARGAR_EXCEL
             RySeptiembre();
             RyOctubre();
             RyNoviembre();
-
+            RyDiciembre();
 
 
             RCReporte();
@@ -309,6 +309,55 @@ namespace CARGAR_EXCEL
                                 Response.Charset = "";
                                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
                                 Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenesPalacioHNoviembre2022.xlsx");
+                                using (MemoryStream MyMemoryStream = new MemoryStream())
+                                {
+                                    wb.SaveAs(MyMemoryStream);
+                                    MyMemoryStream.WriteTo(Response.OutputStream);
+                                    Response.Flush();
+                                    Response.End();
+                                }
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+
+
+        }
+        protected void ExportExcelRYDiciembre2022(object sender, EventArgs e)
+        {
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Year_2022_Diciembre_PalacioH_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dataTable, "2022");
+
+                                Response.Clear();
+                                Response.Buffer = true;
+                                Response.Charset = "";
+                                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenesPalacioHDiciembre2022.xlsx");
                                 using (MemoryStream MyMemoryStream = new MemoryStream())
                                 {
                                     wb.SaveAs(MyMemoryStream);
@@ -813,6 +862,48 @@ namespace CARGAR_EXCEL
 
             }
         }
+        public async Task RyDiciembre()
+        {
+            DataTable cargaStops = facLabControler.RyDiciembrePalacioH2022();
+            int numCells = 4;
+            int rownum = 0;
+            foreach (DataRow item in cargaStops.Rows)
+            {
+
+
+                TableRow r = new TableRow();
+                for (int i = 0; i < numCells; i++)
+                {
+                    if (i == 0)
+                    {
+                        HyperLink hp1 = new HyperLink();
+                        hp1.ID = "hpIndex" + rownum.ToString();
+                        hp1.Text = item[i].ToString();
+                        //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
+                        TableCell c = new TableCell();
+                        c.Controls.Add(hp1);
+                        r.Cells.Add(c);
+
+                    }
+                    else
+                    {
+                        TableCell c = new TableCell();
+                        c.Controls.Add(new LiteralControl("row "
+                            + rownum.ToString() + ", cell " + i.ToString()));
+                        c.Text = item[i].ToString();
+                        r.Cells.Add(c);
+                    }
+                }
+
+
+                TableDiciembre2022.Rows.Add(r);
+                rownum++;
+
+                //FIN
+
+
+            }
+        }
         public void RCReporte()
         {
             DateTime Nfecha = DateTime.Now;
@@ -907,7 +998,31 @@ namespace CARGAR_EXCEL
                     TNoviembre.Text = Convert.ToString(NoviembreVt);
                 }
             }
+
+            DataTable rdiciembre = facLabControler.TotalProcDiciembrePalacioH();
+            foreach (DataRow idiciembre in rdiciembre.Rows)
+            {
+                int DiciembreV = Convert.ToInt32(idiciembre["total"].ToString());
+                Diciembre.Value = Convert.ToString(DiciembreV);
+            }
+            DataTable rdiciembret = facLabControler.TotalProcDiciembrePalacioHyear(nfecha);
+            if (rdiciembret.Rows.Count == 0)
+            {
+                Diciembret.Text = "0";
+                TDiciembre.Text = "0";
+            }
+            else
+            {
+                foreach (DataRow idiciembret in rdiciembret.Rows)
+                {
+                    int DiciembreVt = Convert.ToInt32(idiciembret["total"].ToString());
+                    Diciembret.Text = Convert.ToString(DiciembreVt);
+                    TDiciembre.Text = Convert.ToString(DiciembreVt);
+                }
+            }
+
             
+
             //DataTable rnoviembret = facLabControler.TotalProcNoviembrePenafielyear(nfecha);
             //if (rnoviembret.Rows.Count == 0)
             //{
