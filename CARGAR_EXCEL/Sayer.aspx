@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PalacioH.aspx.cs" Inherits="CARGAR_EXCEL.PalacioH" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sayer.aspx.cs" Inherits="CARGAR_EXCEL.Sayer" %>
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
@@ -154,7 +154,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="PalacioH.aspx" class="nav-link active">
+                <a href="PalacioH.aspx" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Palacio de Hierro</p>
                 </a>
@@ -163,6 +163,12 @@
                 <a href="Dhl.aspx" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dhl</p>
+                </a>
+              </li>
+                 <li class="nav-item">
+                <a href="Sayer.aspx" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sayer</p>
                 </a>
               </li>
             </ul>
@@ -193,12 +199,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard - Palacio de Hierro</h1>
+            <h1 class="m-0">Dashboard - SAYER</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Palacio H</li>
+              <li class="breadcrumb-item active">Sayer</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -217,7 +223,7 @@
               <div class="inner">
                 <h3><asp:Label ID="TotalBox" CssClass="label" runat="server"></asp:Label></h3>
 
-                <p>Ordenes</p>
+                <p>Ordenes creadas</p>
               </div>
               <div class="icon">
                 <i class="fa fa-cogs" aria-hidden="true"></i>
@@ -265,7 +271,7 @@
                    <asp:HiddenField ID="Agosto"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Septiembre"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Octubre"  runat="server"></asp:HiddenField>
-                  <asp:HiddenField ID="Noviembre"  runat="server"></asp:HiddenField>
+                    <asp:HiddenField ID="Noviembre"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Diciembre"  runat="server"></asp:HiddenField>
                 <p>Ordenes</p>
               </div>
@@ -950,7 +956,7 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-info">
                             <div class="modal-header">
-                             <table style="border-collapse:collapse;width:100% !important">
+                               <table style="border-collapse:collapse;width:100% !important">
                                     <tr>
                                         <td><h4 class="modal-title"><b>Ordenes procesadas</b></h4></td>
                                         <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcel" runat="server" /></td>
@@ -1055,7 +1061,7 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-success">
                             <div class="modal-header">
-                               <table style="border-collapse:collapse;width:100% !important">
+                              <table style="border-collapse:collapse;width:100% !important">
                                     <tr>
                                         <td><h4 class="modal-title"><b>Ordenes timbradas automaticamente</b></h4></td>
                                         <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcelTA" runat="server" /></td>
@@ -1160,7 +1166,7 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-warning">
                             <div class="modal-header">
-                              <table style="border-collapse:collapse;width:100% !important">
+                             <table style="border-collapse:collapse;width:100% !important">
                                     <tr>
                                         <td><h4 class="modal-title"><b>Ordenes timbradas manualmente</b></h4></td>
                                         <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcelTM" runat="server" /></td>
@@ -1265,7 +1271,7 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-danger">
                             <div class="modal-header">
-                             <table style="border-collapse:collapse;width:100% !important">
+                               <table style="border-collapse:collapse;width:100% !important">
                                     <tr>
                                         <td><h4 class="modal-title"><b>Ordenes canceladas</b></h4></td>
                                         <td><asp:Button Text="Download" CssClass="btn btn-dark" OnClick="ExportExcelTC" runat="server" /></td>
@@ -1438,7 +1444,7 @@
             var v2 = document.getElementById('<%=Septiembre.ClientID%>').value;
             var v3 = document.getElementById('<%=Octubre.ClientID%>').value;
            var v4 = document.getElementById('<%=Noviembre.ClientID%>').value;
-            var v5 = document.getElementById('<%=Diciembre.ClientID%>').value;
+           var v5 = document.getElementById('<%=Diciembre.ClientID%>').value;
             var areaChartData = {
                 labels: ['Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'],
                 datasets: [

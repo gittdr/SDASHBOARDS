@@ -94,6 +94,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.RyDiciembreDhl2022();
         }
+        public DataTable RyEnero2023()
+        {
+            return this.modelFact.RyEnero2023();
+        }
         public DataTable OTA()
         {
             return this.modelFact.OTA();
@@ -234,9 +238,17 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcDiciembre();
         }
+        public DataTable TotalProcEnero()
+        {
+            return this.modelFact.TotalProcEnero();
+        }
         public DataTable TotalProcNoviembre2022(string nfecha)
         {
             return this.modelFact.TotalProcNoviembre2022(nfecha);
+        }
+        public DataTable TotalProcEnero2023(string nfecha)
+        {
+            return this.modelFact.TotalProcEnero2023(nfecha);
         }
         public DataTable TotalProcDiciembre2022(string nfecha)
         {
