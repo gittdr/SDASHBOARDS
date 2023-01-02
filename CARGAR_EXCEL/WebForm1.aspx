@@ -286,7 +286,7 @@
         <div class="col-md-12">
             <!-- AREA CHART -->
             <div class="card card-primary">
-              <div class="card-header">
+              <div class="card-header" style="background-color:#083566 !important">
                 <h3 class="card-title">Ordenes procesadas</h3>
 
                 <div class="card-tools">
@@ -318,10 +318,10 @@
               <div class="card-header p-0 border-bottom-0">
                 <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
                     <li class="nav-item">
-                    <a class="nav-link active" id="tab-new-tab" data-toggle="pill" href="#tab-new" role="tab" aria-controls="tab-new" aria-selected="true">2023</a>
+                    <a class="nav-link active" style="border-top: 3px solid #083566 !important" id="tab-new-tab" data-toggle="pill" href="#tab-new" role="tab" aria-controls="tab-new" aria-selected="true">2023</a>
                   </li>
                     <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">2022</a>
+                    <a class="nav-link" id="custom-tabs-four-home-tab" style="border-top: 3px solid #083566 !important" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">2022</a>
                   </li>
                  <%-- <li class="nav-item">
                     <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">2022</a>
@@ -451,7 +451,7 @@
                                 <table style="border-collapse:collapse;width:100% !important">
                                     <tr>
                                         <td><h4 class="modal-title" style="color:white"><b>Total de ordenes registradas en Enero(<span class="info-box-number"><asp:Label ID="TEnero" runat="server"></asp:Label></span>)</b></h4></td>
-                                        <td><asp:Button Text="Download" CssClass="btn btn-dark" OnClick="ExportExcelRYEnero2023" runat="server" /></td>
+                                        <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcelRYEnero2023" runat="server" /></td>
                                     </tr>
                                 </table>
                               
@@ -1584,17 +1584,17 @@
                         pointStrokeColor: 'rgba(12,55,118,1)',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(12,55,118,1)',
-                        data: [v6,0,0,0,0,0,0,v1, v2,v3,v4,v5]
+                        data: [0,0,0,0,0,0,0,v1, v2,v3,v4,v5]
                     },
                     {
                         label: 'Ordenes 2023',
-                        backgroundColor: 'rgba(239, 234, 16, 1)',
-                        borderColor: 'rgba(239, 234, 16, 1)',
+                        backgroundColor: 'rgba(255, 193, 7, 1)',
+                        borderColor: 'rgba(255, 193, 7, 1)',
                         pointRadius: false,
-                        pointColor: 'rgba(239, 234, 16, 1)',
+                        pointColor: 'rgba(255, 193, 7, 1)',
                         pointStrokeColor: '#D14930',
                         pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(239, 234, 16, 1)',
+                        pointHighlightStroke: 'rgba(255, 193, 7, 1)',
                         data: [v6,0,0,0,0,0,0,0,0,0,0,0]
                     }
                 ]

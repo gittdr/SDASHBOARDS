@@ -69,6 +69,15 @@ namespace CARGAR_EXCEL
         protected global::System.Web.UI.WebControls.Label TotalCBox;
 
         /// <summary>
+        /// Control Enero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Enero;
+
+        /// <summary>
         /// Control Agosto.
         /// </summary>
         /// <remarks>
@@ -114,6 +123,15 @@ namespace CARGAR_EXCEL
         protected global::System.Web.UI.WebControls.HiddenField Diciembre;
 
         /// <summary>
+        /// Control Enerot.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Enerot;
+
+        /// <summary>
         /// Control Agostot.
         /// </summary>
         /// <remarks>
@@ -157,6 +175,33 @@ namespace CARGAR_EXCEL
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Diciembret;
+
+        /// <summary>
+        /// Control TEnero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TEnero;
+
+        /// <summary>
+        /// Control UpdatePanel10.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel10;
+
+        /// <summary>
+        /// Control TableEnero2023.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table TableEnero2023;
 
         /// <summary>
         /// Control TAgosto.

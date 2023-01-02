@@ -62,6 +62,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.RyDiciembrePenafiel2022();
         }
+        public DataTable RyEneroPenafiel2023()
+        {
+            return this.modelFact.RyEneroPenafiel2023();
+        }
         public DataTable RySeptiembrePalacioH2022()
         {
             return this.modelFact.RySeptiembrePalacioH2022();
@@ -78,6 +82,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.RyDiciembrePalacioH2022();
         }
+        public DataTable RyEneroPalacioH2023()
+        {
+            return this.modelFact.RyEneroPalacioH2023();
+        }
         public DataTable RySeptiembreDhl2022()
         {
             return this.modelFact.RySeptiembreDhl2022();
@@ -93,6 +101,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable RyDiciembreDhl2022()
         {
             return this.modelFact.RyDiciembreDhl2022();
+        }
+        public DataTable RyEneroDhl2023()
+        {
+            return this.modelFact.RyEneroDhl2023();
         }
         public DataTable RyEnero2023()
         {
@@ -278,6 +290,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcDiciembrePenafiel();
         }
+        public DataTable TotalProcEneroPenafiel2023()
+        {
+            return this.modelFact.TotalProcEneroPenafiel2023();
+        }
         public DataTable TotalProcNoviembrePenafielyear(string nfecha)
         {
             return this.modelFact.TotalProcNoviembrePenafielyear(nfecha);
@@ -285,6 +301,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcDiciembrePenafielyear(string nfecha)
         {
             return this.modelFact.TotalProcDiciembrePenafielyear(nfecha);
+        }
+        public DataTable TotalProcEneroPenafielyear2023(string nfecha)
+        {
+            return this.modelFact.TotalProcEneroPenafielyear2023(nfecha);
         }
         public DataTable TotalProcOctubrePalacioH()
         {
@@ -302,6 +322,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcDiciembrePalacioH();
         }
+        public DataTable TotalProcEneroPalacioH2023()
+        {
+            return this.modelFact.TotalProcEneroPalacioH2023();
+        }
         public DataTable TotalProcNoviembrePalacioHyear(string nfecha)
         {
             return this.modelFact.TotalProcNoviembrePalacioHyear(nfecha);
@@ -309,6 +333,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcDiciembrePalacioHyear(string nfecha)
         {
             return this.modelFact.TotalProcDiciembrePalacioHyear(nfecha);
+        }
+        public DataTable TotalProcEneroPalacioHyear2023(string nfecha)
+        {
+            return this.modelFact.TotalProcEneroPalacioHyear2023(nfecha);
         }
         public DataTable TotalProcOctubreDhl()
         {
@@ -322,6 +350,10 @@ namespace CARGAR_EXCEL.Models
         {
             return this.modelFact.TotalProcDiciembreDhlyear(nfecha);
         }
+        public DataTable TotalProcEneroDhlyear2023(string nfecha)
+        {
+            return this.modelFact.TotalProcEneroDhlyear2023(nfecha);
+        }
         public DataTable TotalProcNoviembreDhl()
         {
             return this.modelFact.TotalProcNoviembreDhl();
@@ -329,6 +361,10 @@ namespace CARGAR_EXCEL.Models
         public DataTable TotalProcDiciembreDhl()
         {
             return this.modelFact.TotalProcDiciembreDhl();
+        }
+        public DataTable TotalProcEneroDhl2023()
+        {
+            return this.modelFact.TotalProcEneroDhl2023();
         }
         public DataTable TotalProcNoviembreDhlyear(string nfecha)
         {

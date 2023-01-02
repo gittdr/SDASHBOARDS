@@ -75,6 +75,7 @@ namespace CARGAR_EXCEL
             RyOctubre();
             RyNoviembre();
             RyDiciembre();
+            RyEnero2023();
 
 
             RCReporte();
@@ -113,6 +114,104 @@ namespace CARGAR_EXCEL
                                 Response.Charset = "";
                                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
                                 Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenes2022Penafiel.xlsx");
+                                using (MemoryStream MyMemoryStream = new MemoryStream())
+                                {
+                                    wb.SaveAs(MyMemoryStream);
+                                    MyMemoryStream.WriteTo(Response.OutputStream);
+                                    Response.Flush();
+                                    Response.End();
+                                }
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+
+
+        }
+        protected void ExportReportYear2023(object sender, EventArgs e)
+        {
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Year_2023_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dataTable, "2023");
+
+                                Response.Clear();
+                                Response.Buffer = true;
+                                Response.Charset = "";
+                                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenes2023Penafiel.xlsx");
+                                using (MemoryStream MyMemoryStream = new MemoryStream())
+                                {
+                                    wb.SaveAs(MyMemoryStream);
+                                    MyMemoryStream.WriteTo(Response.OutputStream);
+                                    Response.Flush();
+                                    Response.End();
+                                }
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            connection.Close();
+                            string message = ex.Message;
+                        }
+                    }
+                }
+            }
+
+
+        }
+        protected void ExportExcelRYEnero2023(object sender, EventArgs e)
+        {
+            string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(cadena2))
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand("sp_Total_Year_2023_Enero_Penafiel_JC", connection))
+                {
+
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandTimeout = 100000;
+
+                    selectCommand.ExecuteNonQuery();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+                    {
+                        try
+                        {
+                            //selectCommand.Connection.Open();
+                            sqlDataAdapter.Fill(dataTable);
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dataTable, "2023");
+
+                                Response.Clear();
+                                Response.Buffer = true;
+                                Response.Charset = "";
+                                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                Response.AddHeader("content-disposition", "attachment;filename=TotalOrdenesPenafielEnero2023.xlsx");
                                 using (MemoryStream MyMemoryStream = new MemoryStream())
                                 {
                                     wb.SaveAs(MyMemoryStream);
@@ -1068,6 +1167,48 @@ namespace CARGAR_EXCEL
 
             }
         }
+        public async Task RyEnero2023()
+        {
+            DataTable cargaStops = facLabControler.RyEneroPenafiel2023();
+            int numCells = 4;
+            int rownum = 0;
+            foreach (DataRow item in cargaStops.Rows)
+            {
+
+
+                TableRow r = new TableRow();
+                for (int i = 0; i < numCells; i++)
+                {
+                    if (i == 0)
+                    {
+                        HyperLink hp1 = new HyperLink();
+                        hp1.ID = "hpIndex" + rownum.ToString();
+                        hp1.Text = item[i].ToString();
+                        //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + item[i].ToString();
+                        TableCell c = new TableCell();
+                        c.Controls.Add(hp1);
+                        r.Cells.Add(c);
+
+                    }
+                    else
+                    {
+                        TableCell c = new TableCell();
+                        c.Controls.Add(new LiteralControl("row "
+                            + rownum.ToString() + ", cell " + i.ToString()));
+                        c.Text = item[i].ToString();
+                        r.Cells.Add(c);
+                    }
+                }
+
+
+                TableEnero2023.Rows.Add(r);
+                rownum++;
+
+                //FIN
+
+
+            }
+        }
         public void RCReporte()
         {
             DateTime Nfecha = DateTime.Now;
@@ -1157,12 +1298,34 @@ namespace CARGAR_EXCEL
 
                     int DiciembreVt = Convert.ToInt32(idiciembret["total"].ToString());
                     Diciembret.Text = Convert.ToString(DiciembreVt);
-                    TNoviembre.Text = Convert.ToString(DiciembreVt);
+                    TDiciembre.Text = Convert.ToString(DiciembreVt);
                 }
             }
             //int NoviembreV = 0;
             //Noviembre.Value = NoviembreV.ToString();
-            
+            DataTable renero = facLabControler.TotalProcEneroPenafiel2023();
+            foreach (DataRow ienero in renero.Rows)
+            {
+                int EneroV = Convert.ToInt32(ienero["total"].ToString());
+                Enero.Value = Convert.ToString(EneroV);
+            }
+            DataTable renerot = facLabControler.TotalProcEneroPenafielyear2023(nfecha);
+            if (renerot.Rows.Count == 0)
+            {
+                Enerot.Text = "0";
+                TEnero.Text = "0";
+            }
+            else
+            {
+                foreach (DataRow ienerot in renerot.Rows)
+                {
+
+                    int EneroVt = Convert.ToInt32(ienerot["total"].ToString());
+                    Enerot.Text = Convert.ToString(EneroVt);
+                    TEnero.Text = Convert.ToString(EneroVt);
+                }
+            }
+
             DataTable rtds = facLabControler.TotalProcPenafiel();
             
                 foreach (DataRow iseg in rtds.Rows)
