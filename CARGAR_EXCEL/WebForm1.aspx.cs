@@ -1055,6 +1055,7 @@ namespace CARGAR_EXCEL
             DateTime Nfecha = DateTime.Now;
             //string nfecha = Nfecha.ToString("yyyy");
             string nfecha = Nfecha.ToString("2022");
+            string nvfecha = Nfecha.ToString("2023");
             DataTable roct = facLabControler.TotalProcOct();
             foreach (DataRow ioct in roct.Rows)
             {
@@ -1162,7 +1163,7 @@ namespace CARGAR_EXCEL
                 Enero.Value = Convert.ToString(EneroV);
 
             }
-            DataTable renero23 = facLabControler.TotalProcEnero2023(nfecha);
+            DataTable renero23 = facLabControler.TotalProcEnero2023(nvfecha);
             if (renero23.Rows.Count == 0)
             {
                 Enerot.Text = "0";

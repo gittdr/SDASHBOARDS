@@ -1213,6 +1213,7 @@ namespace CARGAR_EXCEL
             DateTime Nfecha = DateTime.Now;
             //string nfecha = Nfecha.ToString("yyyy");
             string nfecha = Nfecha.ToString("2022");
+            string nvfecha = Nfecha.ToString("2023");
             //DATOS PARA LA GRAFICA
             DataTable roct = facLabControler.TotalProcAgoDhl();
             foreach (DataRow ioct in roct.Rows)
@@ -1312,7 +1313,7 @@ namespace CARGAR_EXCEL
                 Enero.Value = Convert.ToString(EneroV);
             }
 
-            DataTable renerot = facLabControler.TotalProcEneroDhlyear2023(nfecha);
+            DataTable renerot = facLabControler.TotalProcEneroDhlyear2023(nvfecha);
             if (renerot.Rows.Count == 0)
             {
                 Enerot.Text = "0";

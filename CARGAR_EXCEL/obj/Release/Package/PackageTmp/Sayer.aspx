@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="CARGAR_EXCEL.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sayer.aspx.cs" Inherits="CARGAR_EXCEL.Sayer" %>
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
@@ -7,29 +7,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <%--  <meta http-equiv="Refresh" content="5" />--%>
     <title>TDR | TI APPS</title>
-     <link rel="icon" href="Models/icon.png"/>
+     <link rel="icon" href="Models/icon.png">
     <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css"/>
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"/>
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"/>
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css"/>
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css"/>
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"/>
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css"/>
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css"/>
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
    
    <%-- <script>
         $(document).ready(function () {
@@ -106,7 +105,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="Models/logo.png" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8"/>
+      <img src="Models/logo.png" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Admin</span>
     </a>
 
@@ -142,7 +141,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="WebForm1.aspx" class="nav-link active">
+                <a href="WebForm1.aspx" class="nav-link">
                     
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liverded</p>
@@ -164,6 +163,12 @@
                 <a href="Dhl.aspx" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dhl</p>
+                </a>
+              </li>
+                 <li class="nav-item">
+                <a href="Sayer.aspx" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sayer</p>
                 </a>
               </li>
             </ul>
@@ -194,12 +199,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard - Liverded</h1>
+            <h1 class="m-0">Dashboard - SAYER</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Liverded</li>
+              <li class="breadcrumb-item active">Sayer</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -218,7 +223,7 @@
               <div class="inner">
                 <h3><asp:Label ID="TotalBox" CssClass="label" runat="server"></asp:Label></h3>
 
-                <p>Ordenes</p>
+                <p>Ordenes creadas</p>
               </div>
               <div class="icon">
                 <i class="fa fa-cogs" aria-hidden="true"></i>
@@ -263,11 +268,10 @@
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3><asp:Label ID="TotalCBox" CssClass="label" runat="server"></asp:Label></h3>
-                  <asp:HiddenField ID="Enero"  runat="server"></asp:HiddenField>
                    <asp:HiddenField ID="Agosto"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Septiembre"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Octubre"  runat="server"></asp:HiddenField>
-                  <asp:HiddenField ID="Noviembre"  runat="server"></asp:HiddenField>
+                    <asp:HiddenField ID="Noviembre"  runat="server"></asp:HiddenField>
                   <asp:HiddenField ID="Diciembre"  runat="server"></asp:HiddenField>
                 <p>Ordenes</p>
               </div>
@@ -286,7 +290,7 @@
         <div class="col-md-12">
             <!-- AREA CHART -->
             <div class="card card-primary">
-              <div class="card-header" style="background-color:#083566 !important">
+              <div class="card-header">
                 <h3 class="card-title">Ordenes procesadas</h3>
 
                 <div class="card-tools">
@@ -304,24 +308,24 @@
                 </div>
               </div>
               <!-- /.card-body -->
-               
+            </div>
+            <!-- /.card -->
+
+            <!-- DONUT CHART -->
+            
+            <!-- /.card -->
+
+            <!-- PIE CHART -->
+            
+            <!-- /.card -->
 
           </div>
-            
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID <img src="dist/img/prod-5.jpg" />to make the widgets sortable)-->
-         
-          <!-- right col -->
-        </div>
             <div class="col-12 col-sm-12">
             <div class="card card-primary card-outline card-outline-tabs">
               <div class="card-header p-0 border-bottom-0">
                 <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
-                    <li class="nav-item">
-                    <a class="nav-link active" style="border-top: 3px solid #083566 !important" id="tab-new-tab" data-toggle="pill" href="#tab-new" role="tab" aria-controls="tab-new" aria-selected="true">2023</a>
-                  </li>
-                    <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-four-home-tab" style="border-top: 3px solid #083566 !important" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">2022</a>
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">2022</a>
                   </li>
                  <%-- <li class="nav-item">
                     <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">2022</a>
@@ -331,30 +335,7 @@
               </div>
               <div class="card-body">
                 <div class="tab-content" id="custom-tabs-four-tabContent">
-                    <div class="tab-pane fade show active" id="tab-new">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-6">
-                                    <h5 class="mb-2">Total de ordenes registradas</h5>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-6" style="text-align:right">
-                                    <asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportReportEneroYear" runat="server"/>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 col-4">
-                                    <div class="info-box">
-                                        <span class="info-box-icon" style="background-color:#252850;color:white "><i class="far fa-calendar"></i></span>
-                                        <div class="info-box-content">
-                                        <span class="info-box-text">Enero <a data-toggle="modal" data-target="#modal-RYENERO" class="small-box-footer" style="cursor:pointer"><i class="fas fa-search"></i></a></span>
-                                        <span class="info-box-number">Total: <asp:Label ID="Enerot" runat="server"></asp:Label></span>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade show" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
+                  <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
                      <div class="container-fluid">
                          <div class="row">
                              <div class="col-md-6 col-sm-6 col-6">
@@ -364,13 +345,12 @@
                                  <asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportReportYear" runat="server" />
                              </div>
                          </div>
-  
                          <div class="row">
                              
                              <div class="col-md-4 col-sm-4 col-4">
                             <div class="info-box">
-                                <span class="info-box-icon" style="background-color:#FF5733"><i class="far fa-calendar"></i></span>
-                                
+                              <span class="info-box-icon" style="background-color:#FF5733"><i class="far fa-calendar"></i></span>
+
                               <div class="info-box-content">
                                 <span class="info-box-text">Agosto <a data-toggle="modal" data-target="#modal-RYAGOSTO" class="small-box-footer" style="cursor:pointer"><i class="fas fa-search"></i></a></span>
                                 <span class="info-box-number">Total: <asp:Label ID="Agostot" runat="server"></asp:Label></span>
@@ -415,7 +395,7 @@
                                 </div>
                                 <!-- /.info-box -->
                               </div>
-                              <div class="col-md-6 col-sm-6 col-6">
+                             <div class="col-md-6 col-sm-6 col-6">
                                 <div class="info-box">
                                   <span class="info-box-icon bg-secondary"><i class="far fa-calendar"></i></span>
 
@@ -440,116 +420,14 @@
               <!-- /.card -->
             </div>
           </div>
-            </div>
-            
+          <!-- /.Left col -->
+          <!-- right col (We are only adding the ID <img src="dist/img/prod-5.jpg" />to make the widgets sortable)-->
+         
+          <!-- right col -->
+        </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
-         <div class="modal fade" id="modal-RYENERO">
-                <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
-                      <div class="modal-content" style="background-color:#252850">
-                            <div class="modal-header">
-                                <table style="border-collapse:collapse;width:100% !important">
-                                    <tr>
-                                        <td><h4 class="modal-title" style="color:white"><b>Total de ordenes registradas en Enero(<span class="info-box-number"><asp:Label ID="TEnero" runat="server"></asp:Label></span>)</b></h4></td>
-                                        <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcelRYEnero2023" runat="server" /></td>
-                                    </tr>
-                                </table>
-                              
-                              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body" style="height: 40vh;overflow-y: auto;background-color:white;color:black !important">
-                                 <div class="col-sm-12">
-                            
-                                                   
-                                                    <asp:UpdatePanel ID="UpdatePanel10" UpdateMode="Conditional" runat="server">
-                                                        <ContentTemplate>
-                                                             <asp:Table id="TableEnero2023" class="table table-striped" runat="server" Font-Names="ARIAL">
-                                                                <asp:TableRow>
-                                                                    <asp:TableCell HorizontalAlign="Center">
-                                                                        <b>Orden</b>
-                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
-                                                                        <b>Segmento</b>
-                                                                    </asp:TableCell><asp:TableCell HorizontalAlign="Center">
-                                                                        <b>Billto</b>
-                                                                    </asp:TableCell>
-                                                                    <asp:TableCell HorizontalAlign="Center">
-                                                                        <b>FechaTimbrado</b>
-                                                                    </asp:TableCell>
-                                                                </asp:TableRow>
-
-                                                            </asp:Table>
-                                         </center>   
-                                                        </ContentTemplate>
-                                                    </asp:UpdatePanel>
-                                
-                                        </div>
-                                <%--<table class="table table-sm">
-                                  <thead>
-                                    <tr>
-                                      <th style="width: 10px">#</th>
-                                      <th>Task</th>
-                                      <th>Progress</th>
-                                      <th style="width: 40px">Label</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>1.</td>
-                                      <td>Update software</td>
-                                      <td>
-                                        <div class="progress progress-xs">
-                                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                        </div>
-                                      </td>
-                                      <td><span class="badge bg-danger">55%</span></td>
-                                    </tr>
-                                    <tr>
-                                      <td>2.</td>
-                                      <td>Clean database</td>
-                                      <td>
-                                        <div class="progress progress-xs">
-                                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                                        </div>
-                                      </td>
-                                      <td><span class="badge bg-warning">70%</span></td>
-                                    </tr>
-                                    <tr>
-                                      <td>3.</td>
-                                      <td>Cron job running</td>
-                                      <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                        </div>
-                                      </td>
-                                      <td><span class="badge bg-primary">30%</span></td>
-                                    </tr>
-                                    <tr>
-                                      <td>4.</td>
-                                      <td>Fix and squish bugs</td>
-                                      <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                                        </div>
-                                      </td>
-                                      <td><span class="badge bg-success">90%</span></td>
-                                    </tr>
-                                  </tbody>
-                                </table>--%>
-                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                              
-                              <!-- /.card-body -->
-                            </div>
-                        </div>
-                   <%-- <div class="modal-footer justify-content-between">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>--%>
-                  </div>
-              <!-- /.modal-content -->
-            </div>
-          <div class="modal fade" id="modal-RYAGOSTO">
+         <div class="modal fade" id="modal-RYAGOSTO">
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content" style="background-color:#FF5733">
                             <div class="modal-header">
@@ -1078,13 +956,12 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-info">
                             <div class="modal-header">
-                                <table style="border-collapse:collapse;width:100% !important">
+                               <table style="border-collapse:collapse;width:100% !important">
                                     <tr>
                                         <td><h4 class="modal-title"><b>Ordenes procesadas</b></h4></td>
                                         <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcel" runat="server" /></td>
                                     </tr>
                                 </table>
-                              
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -1168,7 +1045,7 @@
                                   </tbody>
                                 </table>--%>
                               <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                             
+             
                               <!-- /.card-body -->
                             </div>
                         </div>
@@ -1184,13 +1061,12 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-success">
                             <div class="modal-header">
-                                <table style="border-collapse:collapse;width:100% !important">
+                              <table style="border-collapse:collapse;width:100% !important">
                                     <tr>
                                         <td><h4 class="modal-title"><b>Ordenes timbradas automaticamente</b></h4></td>
                                         <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcelTA" runat="server" /></td>
                                     </tr>
                                 </table>
-                              
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -1274,7 +1150,7 @@
                                   </tbody>
                                 </table>--%>
                               <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-                              
+             
                               <!-- /.card-body -->
                             </div>
                         </div>
@@ -1290,13 +1166,12 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-warning">
                             <div class="modal-header">
-                                <table style="border-collapse:collapse;width:100% !important">
+                             <table style="border-collapse:collapse;width:100% !important">
                                     <tr>
                                         <td><h4 class="modal-title"><b>Ordenes timbradas manualmente</b></h4></td>
                                         <td><asp:Button Text="Download" CssClass="btn btn-danger" OnClick="ExportExcelTM" runat="server" /></td>
                                     </tr>
                                 </table>
-                              
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -1396,13 +1271,12 @@
                 <div class="modal-dialog modal-lg" style="overflow-y: initial !important">
                       <div class="modal-content bg-danger">
                             <div class="modal-header">
-                                <table style="border-collapse:collapse;width:100% !important">
+                               <table style="border-collapse:collapse;width:100% !important">
                                     <tr>
                                         <td><h4 class="modal-title"><b>Ordenes canceladas</b></h4></td>
                                         <td><asp:Button Text="Download" CssClass="btn btn-dark" OnClick="ExportExcelTC" runat="server" /></td>
                                     </tr>
                                 </table>
-                              
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -1507,7 +1381,7 @@
     <strong>Copyright &copy; 2021 <a href="http://tdr.com.mx/">TDR Soluciones Logísticas</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.5.0
+      <b>Version</b> 1.4.0
     </div>
   </footer>
 
@@ -1552,7 +1426,7 @@
 <!-- AdminLTE for demo purposes -->
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<%--<script src="dist/js/pages/dashboard.js"></script>--%>
+<script src="dist/js/pages/dashboard.js"></script>
     <script>
         $(function () {
             /* ChartJS
@@ -1569,34 +1443,33 @@
             var v1 = document.getElementById('<%=Agosto.ClientID%>').value;
             var v2 = document.getElementById('<%=Septiembre.ClientID%>').value;
             var v3 = document.getElementById('<%=Octubre.ClientID%>').value;
-            var v4 = document.getElementById('<%=Noviembre.ClientID%>').value;
-            var v5 = document.getElementById('<%=Diciembre.ClientID%>').value;
-            var v6 = document.getElementById('<%=Enero.ClientID%>').value;
+           var v4 = document.getElementById('<%=Noviembre.ClientID%>').value;
+           var v5 = document.getElementById('<%=Diciembre.ClientID%>').value;
             var areaChartData = {
-                labels: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                labels: ['Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'],
                 datasets: [
                     {
-                        label: 'Ordenes 2022',
-                        backgroundColor: 'rgba(12,55,118,0.9)',
-                        borderColor: 'rgba(12,55,118,0.8)',
+                        label: 'Ordenes procesadas',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
                         pointRadius: false,
                         pointColor: '#3b8bba',
-                        pointStrokeColor: 'rgba(12,55,118,1)',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
                         pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(12,55,118,1)',
-                        data: [0,0,0,0,0,0,0,v1, v2,v3,v4,v5]
-                    },
-                    {
-                        label: 'Ordenes 2023',
-                        backgroundColor: 'rgba(255, 193, 7, 1)',
-                        borderColor: 'rgba(255, 193, 7, 1)',
-                        pointRadius: false,
-                        pointColor: 'rgba(255, 193, 7, 1)',
-                        pointStrokeColor: '#D14930',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(255, 193, 7, 1)',
-                        data: [v6,0,0,0,0,0,0,0,0,0,0,0]
-                    }
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: [v1, v2, v3, v4,v5]
+                    }//,
+                    //{
+                    //    label: 'Electronics',
+                    //    backgroundColor: 'rgba(210, 214, 222, 1)',
+                    //    borderColor: 'rgba(210, 214, 222, 1)',
+                    //    pointRadius: false,
+                    //    pointColor: 'rgba(210, 214, 222, 1)',
+                    //    pointStrokeColor: '#c1c7d1',
+                    //    pointHighlightFill: '#fff',
+                    //    pointHighlightStroke: 'rgba(220,220,220,1)',
+                    //    data: [65, 59, 80, 81, 56, 55, 40]
+                    //},
                 ]
             }
 
@@ -1649,11 +1522,18 @@
             // Get context with jQuery - using jQuery's .get() method.
             var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
             var donutData = {
-                labels: ['Agosto', 'Septiembre', 'Octubre'],
+                labels: [
+                    'Chrome',
+                    'IE',
+                    'FireFox',
+                    'Safari',
+                    'Opera',
+                    'Navigator',
+                ],
                 datasets: [
                     {
-                        data: [v1, v2, v3],
-                        backgroundColor: ['#f56954', '#00a65a', '#f39c12'],
+                        data: [700, 500, 400, 600, 300, 100],
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
                     }
                 ]
             }
